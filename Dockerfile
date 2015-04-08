@@ -1,6 +1,6 @@
-#FROM mhart/alpine-node-base:0.10
+FROM mhart/alpine-node-base:0.10
 #FROM mhart/alpine-node-base:0.12
-FROM mhart/alpine-iojs-base:latest
+#FROM mhart/alpine-iojs-base:latest
 
 RUN apk update && \
   apk add curl && \
