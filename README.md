@@ -20,7 +20,7 @@ Each comes in two flavours: with and without npm:
 Example
 -------
 
-```sh
+```console
 $ docker run mhart/alpine-node-base node --version
 v0.12.2
 
@@ -34,7 +34,7 @@ $ docker run mhart/alpine-node npm --version
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
 
-```docker
+```Dockerfile
 FROM mhart/alpine-node-base
 # FROM mhart/alpine-node-base:0.10
 # FROM mhart/alpine-iojs-base
