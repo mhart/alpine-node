@@ -4,7 +4,7 @@ Minimal Node.js Docker Images (20MB, or 7.5MB compressed)
 Versions v0.10.38, v0.12.2 and io.js v1.6.4 –
 built on [Alpine Linux](http://alpinelinux.org/).
 
-Each comes in two flavours: with and without npm:
+Each comes in two flavours, with and without npm:
 
 - [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.7.5)
   - latest, 0.12, 0.12.2
