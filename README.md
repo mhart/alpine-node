@@ -22,34 +22,30 @@ Each comes in two flavours, with and without npm:
 Example
 -------
 
-```console
-$ docker run mhart/alpine-node-base node --version
-v0.12.2
+    $ docker run mhart/alpine-node-base node --version
+    v0.12.2
 
-$ docker run mhart/alpine-node-base:0.10 node --version
-v0.10.38
+    $ docker run mhart/alpine-node-base:0.10 node --version
+    v0.10.38
 
-$ docker run mhart/alpine-node npm --version
-2.7.6
-```
+    $ docker run mhart/alpine-node npm --version
+    2.7.6
 
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
 
-```Dockerfile
-FROM mhart/alpine-node-base
-# FROM mhart/alpine-node-base:0.10
-# FROM mhart/alpine-iojs-base
+    FROM mhart/alpine-node-base
+    # FROM mhart/alpine-node-base:0.10
+    # FROM mhart/alpine-iojs-base
 
-WORKDIR /src
-ADD . .
+    WORKDIR /src
+    ADD . .
 
-# If you need npm, use mhart/alpine-node or mhart/alpine-iojs
-# RUN npm install
+    # If you need npm, use mhart/alpine-node or mhart/alpine-iojs
+    # RUN npm install
 
-EXPOSE 3000
-CMD ["node", "index.js"]
-```
+    EXPOSE 3000
+    CMD ["node", "index.js"]
 
 Inspired by:
 
