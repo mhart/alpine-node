@@ -1,4 +1,4 @@
-Minimal Node.js Docker Images (20MB, or 7.5MB compressed)
+Minimal Node.js/io.js Docker Images (20MB, or 7.5MB compressed)
 ---------------------------------------------------------
 
 Versions v0.10.38, v0.12.2 and io.js v1.7.1 –
