@@ -18,7 +18,6 @@ RUN apk update && \
   paxctl -cm /usr/bin/${CMD} && \
   apk del make gcc g++ python paxctl curl && \
   apk add libgcc libstdc++ && \
-  npm install -g npm && \
   cd / && \
   rm -rf /${CMD}-${VERSION} /var/cache/apk/* /tmp/* /root/.npm \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
