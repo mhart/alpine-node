@@ -1,7 +1,7 @@
 Minimal Node.js/io.js Docker Images (20MB, or 7.5MB compressed)
 ---------------------------------------------------------
 
-Versions v0.10.38, v0.12.2 and io.js v1.7.1 –
+Versions v0.10.38, v0.12.2 and io.js v1.8.1 –
 built on [Alpine Linux](http://alpinelinux.org/).
 
 Each comes in two flavours, with and without npm:
@@ -12,11 +12,13 @@ Each comes in two flavours, with and without npm:
 - [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (without npm)
   - latest, 0.12, 0.12.2
   - 0.10, 0.10.38
-- [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.7.6)
-  - latest, 1.7, 1.7.1
+- [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.8.3)
+  - latest, 1.8, 1.8.1
+  - 1.7, 1.7.1
   - 1.6, 1.6.4
 - [mhart/alpine-iojs-base](https://registry.hub.docker.com/u/mhart/alpine-iojs-base/) (without npm)
-  - latest, 1.6, 1.6.4
+  - latest, 1.8, 1.8.1
+  - 1.7, 1.7.1
   - 1.6, 1.6.4
 
 Example
