@@ -6,7 +6,7 @@ built on [Alpine Linux](http://alpinelinux.org/).
 
 Each comes in two flavours, with and without npm:
 
-- [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.7.6)
+- [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.8.3)
   - latest, 0.12, 0.12.2
   - 0.10, 0.10.38
 - [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (without npm)
@@ -31,7 +31,7 @@ Example
     v0.10.38
 
     $ docker run mhart/alpine-node npm --version
-    2.7.6
+    2.8.3
 
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
