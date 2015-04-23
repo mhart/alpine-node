@@ -1,22 +1,23 @@
-Minimal Node.js/io.js Docker Images (20MB, or 7.5MB compressed)
----------------------------------------------------------
+Minimal Node/io.js Docker Images (19.7MB, or 6.9MB compressed)
+--------------------------------------------------------------
 
 Versions v0.10.38, v0.12.2 and io.js v1.8.1 –
 built on [Alpine Linux](http://alpinelinux.org/).
 
-Each comes in two flavours, with and without npm:
+Each comes in two flavours: a full install built with npm, and a base install
+with Node/io.js built as a static binary with no npm:
 
 - [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.8.3)
   - latest, 0.12, 0.12.2
   - 0.10, 0.10.38
-- [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (without npm)
+- [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (static, without npm)
   - latest, 0.12, 0.12.2
   - 0.10, 0.10.38
 - [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.8.3)
   - latest, 1.8, 1.8.1
   - 1.7, 1.7.1
   - 1.6, 1.6.4
-- [mhart/alpine-iojs-base](https://registry.hub.docker.com/u/mhart/alpine-iojs-base/) (without npm)
+- [mhart/alpine-iojs-base](https://registry.hub.docker.com/u/mhart/alpine-iojs-base/) (static, without npm)
   - latest, 1.8, 1.8.1
   - 1.7, 1.7.1
   - 1.6, 1.6.4
@@ -36,9 +37,17 @@ Example
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
 
+If you don't have any native dependencies, ie only depend on pure-JS npm
+modules, then my suggestion is to run `npm install` *before* running `docker
+build` (and make sure `node_modules` isn't in your `.dockerignore`) – then you
+don't need an `npm install` step in your Dockerfile and you don't need `npm`
+installed in your Docker image – so you can use one of the smaller `*-base`
+images.
+
     FROM mhart/alpine-node-base
     # FROM mhart/alpine-node-base:0.10
     # FROM mhart/alpine-iojs-base
+    # FROM mhart/alpine-node
 
     WORKDIR /src
     ADD . .
