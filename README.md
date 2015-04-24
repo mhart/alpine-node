@@ -1,5 +1,5 @@
-Minimal Node/io.js Docker Images (19.7MB, or 6.9MB compressed)
---------------------------------------------------------------
+Minimal Node/io.js Docker Images (19MB, or 6.5MB compressed)
+------------------------------------------------------------
 
 Versions v0.10.38, v0.12.2 and io.js v1.8.1 –
 built on [Alpine Linux](http://alpinelinux.org/).
@@ -7,18 +7,18 @@ built on [Alpine Linux](http://alpinelinux.org/).
 Each comes in two flavours: a full install built with npm, and a base install
 with Node/io.js built as a static binary with no npm:
 
-- [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.8.3)
-  - latest, 0.12, 0.12.2
-  - 0.10, 0.10.38
+- [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.8.4)
+  - latest, 0.12, 0.12.2 – 30.53 MB
+  - 0.10, 0.10.38 – 25.84 MB
 - [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (static, without npm)
-  - latest, 0.12, 0.12.2
-  - 0.10, 0.10.38
+  - latest, 0.12, 0.12.2 – 21.21 MB
+  - 0.10, 0.10.38 – 19.03 MB
 - [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.8.3)
-  - latest, 1.8, 1.8.1
+  - latest, 1.8, 1.8.1 – 31.8 MB
   - 1.7, 1.7.1
   - 1.6, 1.6.4
 - [mhart/alpine-iojs-base](https://registry.hub.docker.com/u/mhart/alpine-iojs-base/) (static, without npm)
-  - latest, 1.8, 1.8.1
+  - latest, 1.8, 1.8.1 – 24.6 MB
   - 1.7, 1.7.1
   - 1.6, 1.6.4
 
@@ -32,7 +32,7 @@ Example
     v0.10.38
 
     $ docker run mhart/alpine-node npm --version
-    2.8.3
+    2.8.4
 
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
