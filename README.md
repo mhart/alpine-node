@@ -38,11 +38,11 @@ Example Dockerfile for your own Node.js project
 -----------------------------------------------
 
 If you don't have any native dependencies, ie only depend on pure-JS npm
-modules, then my suggestion is to run `npm install` *before* running `docker
-build` (and make sure `node_modules` isn't in your `.dockerignore`) – then you
-don't need an `npm install` step in your Dockerfile and you don't need `npm`
-installed in your Docker image – so you can use one of the smaller `*-base`
-images.
+modules, then my suggestion is to run `npm install` *before* running
+`docker build` (and make sure `node_modules` isn't in your `.dockerignore`) –
+then you don't need an `npm install` step in your Dockerfile and you don't need
+`npm` installed in your Docker image – so you can use one of the smaller
+`*-base` images.
 
     FROM mhart/alpine-node-base
     # FROM mhart/alpine-node-base:0.10
