@@ -1,7 +1,7 @@
 Minimal Node/io.js Docker Images (19MB, or 6.5MB compressed)
 ------------------------------------------------------------
 
-Versions v0.10.38, v0.12.2 and io.js v1.8.1 –
+Versions v0.10.38, v0.12.2 and io.js v2.0.0 –
 built on [Alpine Linux](http://alpinelinux.org/).
 
 Each comes in two flavours: a full install built with npm, and a base install
@@ -13,12 +13,14 @@ with Node/io.js built as a static binary with no npm:
 - [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (static, without npm)
   - latest, 0.12, 0.12.2 – 21.21 MB
   - 0.10, 0.10.38 – 19.03 MB
-- [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.8.3)
-  - latest, 1.8, 1.8.1 – 31.8 MB
+- [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.9.0)
+  - latest, 2, 2.0, 2.0.0 – 31.99 MB
+  - 1, 1.8, 1.8.1
   - 1.7, 1.7.1
   - 1.6, 1.6.4
 - [mhart/alpine-iojs-base](https://registry.hub.docker.com/u/mhart/alpine-iojs-base/) (static, without npm)
-  - latest, 1.8, 1.8.1 – 24.6 MB
+  - latest, 2, 2.0, 2.0.0 – 24.76 MB
+  - 1, 1.8, 1.8.1
   - 1.7, 1.7.1
   - 1.6, 1.6.4
 
@@ -27,6 +29,9 @@ Example
 
     $ docker run mhart/alpine-node-base node --version
     v0.12.2
+
+    $ docker run mhart/alpine-iojs-base node --version
+    v2.0.0
 
     $ docker run mhart/alpine-node-base:0.10 node --version
     v0.10.38
@@ -70,4 +75,3 @@ Inspired by:
 - http://git.alpinelinux.org/cgit/aports/tree/main/nodejs/APKBUILD
 - http://git.alpinelinux.org/cgit/aports/tree/main/libuv/APKBUILD
 - https://registry.hub.docker.com/u/ficusio/nodejs-base/dockerfile/
-
