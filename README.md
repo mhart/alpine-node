@@ -7,7 +7,7 @@ built on [Alpine Linux](http://alpinelinux.org/).
 Each comes in two flavours: a full install built with npm, and a base install
 with Node/io.js built as a static binary with no npm:
 
-- [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.8.4)
+- [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.9.0)
   - latest, 0.12, 0.12.2 – 30.53 MB
   - 0.10, 0.10.38 – 25.84 MB
 - [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (static, without npm)
@@ -37,7 +37,7 @@ Example
     v0.10.38
 
     $ docker run mhart/alpine-node npm --version
-    2.8.4
+    2.9.0
 
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
