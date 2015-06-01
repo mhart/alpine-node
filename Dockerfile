@@ -5,7 +5,7 @@ ENV VERSION=v0.10.38 CMD=node DOMAIN=nodejs.org CFLAGS="-D__USE_MISC"
 # ENV VERSION=v2.2.1 CMD=iojs DOMAIN=iojs.org NO_NPM_UPDATE=true
 
 # For base builds
-ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
+# ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
 RUN apk-install curl make gcc g++ python linux-headers paxctl libgcc libstdc++ && \
