@@ -6,7 +6,7 @@ ENV VERSION=v0.12.4 CMD=node DOMAIN=nodejs.org
 
 # For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
-# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
+ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
 RUN apk-install curl make gcc g++ python linux-headers paxctl libgcc libstdc++ && \
   curl -sSL https://${DOMAIN}/dist/${VERSION}/${CMD}-${VERSION}.tar.gz | tar -xz && \

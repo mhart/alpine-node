@@ -11,7 +11,7 @@ with Node/io.js built as a static binary with no npm:
   - latest, 0.12, 0.12.4 – 29.98 MB
   - 0.10, 0.10.38 – 25.94 MB
 - [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (static, without npm)
-  - latest, 0.12, 0.12.4 – 21.17 MB
+  - latest, 0.12, 0.12.4 – 22.24 MB
   - 0.10, 0.10.38 – 19.03 MB
 - [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.11.0)
   - latest, 2, 2.2, 2.2.1 – 31.39 MB
