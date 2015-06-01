@@ -2,7 +2,7 @@ FROM gliderlabs/alpine:3.2
 
 # ENV VERSION=v0.10.38 CMD=node DOMAIN=nodejs.org CFLAGS="-D__USE_MISC"
 # ENV VERSION=v0.12.4 CMD=node DOMAIN=nodejs.org
-ENV VERSION=v2.1.0 CMD=iojs DOMAIN=iojs.org NO_NPM_UPDATE=true
+ENV VERSION=v2.2.1 CMD=iojs DOMAIN=iojs.org NO_NPM_UPDATE=true
 
 # For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
