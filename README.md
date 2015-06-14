@@ -22,7 +22,7 @@ with Node/io.js built as a static binary with no npm:
   - 1.7, 1.7.1
   - 1.6, 1.6.4
 - [mhart/alpine-iojs-base](https://registry.hub.docker.com/u/mhart/alpine-iojs-base/) (static, without npm)
-  - latest, 2, 2.3, 2.3.0 – 24.01 MB
+  - latest, 2, 2.3, 2.3.0 – 24.04 MB
   - 2.2, 2.2.1
   - 2.1, 2.1.0
   - 2.0, 2.0.2
