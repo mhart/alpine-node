@@ -1,7 +1,7 @@
 FROM gliderlabs/alpine:3.2
 
-ENV VERSION=v0.10.39 CMD=node DOMAIN=nodejs.org CFLAGS="-D__USE_MISC"
-# ENV VERSION=v0.12.4 CMD=node DOMAIN=nodejs.org
+# ENV VERSION=v0.10.39 CMD=node DOMAIN=nodejs.org CFLAGS="-D__USE_MISC"
+ENV VERSION=v0.12.5 CMD=node DOMAIN=nodejs.org
 # ENV VERSION=v2.3.0 CMD=iojs DOMAIN=iojs.org NO_NPM_UPDATE=true
 
 # For base builds
