@@ -15,20 +15,10 @@ with Node/io.js built as a static binary with no npm:
   - 0.10, 0.10.39 – 18.46 MB
 - [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.11.3)
   - latest, 2, 2.3, 2.3.3 – 33.39 MB
-  - 2.2, 2.2.1
-  - 2.1, 2.1.0
-  - 2.0, 2.0.2
-  - 1, 1.8, 1.8.2
-  - 1.7, 1.7.1
-  - 1.6, 1.6.4
+  - 1, 1.8, 1.8.3
 - [mhart/alpine-iojs-base](https://registry.hub.docker.com/u/mhart/alpine-iojs-base/) (static, without npm)
   - latest, 2, 2.3, 2.3.3 – 24.11 MB
-  - 2.2, 2.2.1
-  - 2.1, 2.1.0
-  - 2.0, 2.0.2
-  - 1, 1.8, 1.8.2
-  - 1.7, 1.7.1
-  - 1.6, 1.6.4
+  - 1, 1.8, 1.8.3
 
 Example
 -------
