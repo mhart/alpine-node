@@ -8,8 +8,8 @@ Each comes in two flavours: a full install built with npm, and a base install
 with Node/io.js built as a static binary with no npm:
 
 - [mhart/alpine-node](https://registry.hub.docker.com/u/mhart/alpine-node/) (with npm 2.13.0)
-  - latest, 0.12, 0.12.7 – 30.8 MB
-  - 0.10, 0.10.40 – 26.15 MB
+  - latest, 0.12, 0.12.7 – 32.78 MB
+  - 0.10, 0.10.40 – 28.14 MB
 - [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (static, without npm)
   - latest, 0.12, 0.12.7 – 22.25 MB
   - 0.10, 0.10.40 – 18.48 MB
