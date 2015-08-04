@@ -13,12 +13,12 @@ with Node/io.js built as a static binary with no npm:
 - [mhart/alpine-node-base](https://registry.hub.docker.com/u/mhart/alpine-node-base/) (static, without npm)
   - latest, 0.12, 0.12.7 – 22.25 MB
   - 0.10, 0.10.40 – 18.48 MB
-- [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.13.2)
-  - latest, 3, 3.0, 3.0.0 – 33.97 MB
+- [mhart/alpine-iojs](https://registry.hub.docker.com/u/mhart/alpine-iojs/) (with npm 2.13.3)
+  - latest, 3, 3.0, 3.0.0 – 34.36 MB
   - 2, 2.5, 2.5.0
   - 1, 1.8, 1.8.4
 - [mhart/alpine-iojs-base](https://registry.hub.docker.com/u/mhart/alpine-iojs-base/) (static, without npm)
-  - latest, 3, 3.0, 3.0.0 – 33.97 MB
+  - latest, 3, 3.0, 3.0.0 – 24.47 MB
   - 2, 2.5, 2.5.0
   - 1, 1.8, 1.8.4
 
