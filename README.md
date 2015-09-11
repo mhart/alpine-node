@@ -1,10 +1,10 @@
 Minimal Node.js Docker Images (18MB, or 6.6MB compressed)
 ---------------------------------------------------------
 
-Versions v4.0.0, v0.12.7, v0.10.40, and io.js – built on [Alpine Linux](http://alpinelinux.org/).
+Versions v4.0.0, v0.12.7, v0.10.40, and io.js – built on [Alpine Linux](https://alpinelinux.org/).
 
-All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/)
-repository, but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
+All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
+but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
 
 - Full install built with npm v2.14.3 (io.js may have different npms):
   - `latest`, `4`, `4.0`, `4.0.0` – 34.94 MB
@@ -71,6 +71,6 @@ then you don't need an `npm install` step in your Dockerfile and you don't need
 
 Inspired by:
 
-- http://git.alpinelinux.org/cgit/aports/tree/main/nodejs/APKBUILD
-- http://git.alpinelinux.org/cgit/aports/tree/main/libuv/APKBUILD
-- https://registry.hub.docker.com/u/ficusio/nodejs-base/dockerfile/
+- https://github.com/alpinelinux/aports/blob/454db196/main/nodejs/APKBUILD
+- https://github.com/alpinelinux/aports/blob/454db196/main/libuv/APKBUILD
+- https://hub.docker.com/r/ficusio/nodejs-base/~/dockerfile/
