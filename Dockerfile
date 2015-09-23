@@ -2,7 +2,7 @@ FROM alpine:3.2
 
 # ENV VERSION=v0.10.40 CFLAGS="-D__USE_MISC"
 # ENV VERSION=v0.12.7
-ENV VERSION=v4.1.0
+ENV VERSION=v4.1.1
 
 # For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
@@ -17,7 +17,7 @@ RUN apk add --update curl make gcc g++ python linux-headers paxctl libgcc libstd
   paxctl -cm /usr/bin/node && \
   cd / && \
   if [ -x /usr/bin/npm ]; then \
-    npm install -g npm && \
+    npm install -g npm@2 && \
     find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
   fi && \
   apk del curl make gcc g++ python linux-headers paxctl ${DEL_PKGS} && \
