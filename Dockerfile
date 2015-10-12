@@ -2,7 +2,7 @@ FROM alpine:3.2
 
 # ENV VERSION=v0.10.40 CFLAGS="-D__USE_MISC"
 # ENV VERSION=v0.12.7
-ENV VERSION=v4.1.2
+ENV VERSION=v4.2.0
 
 # For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
