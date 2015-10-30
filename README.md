@@ -12,10 +12,10 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
   - `3`, `3.3`, `3.3.1` – 34.3 MB (npm 2.14.3)
   - `2`, `2.5`, `2.5.0` - 33.97 MB (npm 2.13.2)
   - `1`, `1.8`, `1.8.4` - 32.93 MB (npm 2.9.0)
-  - `0.12`, `0.12.7` – 32.26 MB
-  - `0.10`, `0.10.40` – 27.62 MB
+  - `0.12`, `0.12.7` – 32.26 MB (npm 2.14.5)
+  - `0.10`, `0.10.40` – 27.62 MB (npm 2.14.5)
 - Base install with node built as a static binary with no npm:
-  - `base`, `base-5`, `base-5.0`, `base-5.0.0` – 25.04 MB
+  - `base`, `base-5`, `base-5.0`, `base-5.0.0` – 25.25 MB
   - `base-4`, `base-4.2`, `base-4.2.1` – 25.04 MB
   - `base-3`, `base-3.3`, `base-3.3.1` – 24.52 MB
   - `base-2`, `base-2.5`, `base-2.5.0` - 24.12 MB
