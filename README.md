@@ -1,20 +1,20 @@
 Minimal Node.js Docker Images (18MB, or 6.6MB compressed)
 ---------------------------------------------------------
 
-Versions v5.1.0, v4.2.2, v0.12.7, v0.10.40, and io.js – built on [Alpine Linux](https://alpinelinux.org/).
+Versions v5.1.0, v4.2.2, v0.12.8, v0.10.40, and io.js – built on [Alpine Linux](https://alpinelinux.org/).
 
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
 but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
 
-- Full install built with npm (2.14.9 unless specified):
+- Full install built with npm (2.14.11 unless specified):
   - `latest`, `5`, `5.1`, `5.1.0` – 35.79 MB (npm 3.4.0)
-  - `4`, `4.2`, `4.2.2` – 34.57 MB
-  - `0.12`, `0.12.7` – 31.81 MB
-  - `0.10`, `0.10.40` – 27.17 MB
+  - `4`, `4.2`, `4.2.2` – 34.82 MB
+  - `0.12`, `0.12.8` – 32.14 MB
+  - `0.10`, `0.10.40` – 27.45 MB
 - Base install with node built as a static binary with no npm:
   - `base`, `base-5`, `base-5.1`, `base-5.1.0` – 25.27 MB
   - `base-4`, `base-4.2`, `base-4.2.2` – 25.04 MB
-  - `base-0.12`, `base-0.12.7` – 22.3 MB
+  - `base-0.12`, `base-0.12.8` – 22.3 MB
   - `base-0.10`, `base-0.10.40` – 18.5 MB
 
 Major io.js versions [are tagged too](https://hub.docker.com/r/mhart/alpine-node/tags/).
