@@ -6,7 +6,7 @@ Versions v5.1.0, v4.2.2, v0.12.8, v0.10.40, and io.js – built on [Alpine Linux
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
 but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
 
-- Full install built with npm (2.14.11 unless specified):
+- Full install built with npm (2.14.12 unless specified):
   - `latest`, `5`, `5.1`, `5.1.0` – 35.79 MB (npm 3.4.0)
   - `4`, `4.2`, `4.2.2` – 34.82 MB
   - `0.12`, `0.12.8` – 32.14 MB
