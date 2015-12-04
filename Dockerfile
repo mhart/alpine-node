@@ -1,13 +1,13 @@
 FROM alpine:3.2
 
-# ENV VERSION=v0.10.40 CFLAGS="-D__USE_MISC" NPM_VERSION=2
-ENV VERSION=v0.12.9 NPM_VERSION=2
+ENV VERSION=v0.10.41 CFLAGS="-D__USE_MISC" NPM_VERSION=2
+# ENV VERSION=v0.12.9 NPM_VERSION=2
 # ENV VERSION=v4.2.3 NPM_VERSION=2
 # ENV VERSION=v5.1.1 NPM_VERSION=3
 
 # For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
-ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
+# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --update curl make gcc g++ python linux-headers paxctl libgcc libstdc++ && \
   curl -sSL https://nodejs.org/dist/${VERSION}/node-${VERSION}.tar.gz | tar -xz && \
