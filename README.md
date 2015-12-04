@@ -7,10 +7,10 @@ All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpi
 but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
 
 - Full install built with npm (2.14.14 unless specified):
-  - `latest`, `5`, `5.1`, `5.1.1` – 35.79 MB (npm 3.4.0)
+  - `latest`, `5`, `5.1`, `5.1.1` – 35.78 MB (npm 3.5.1)
   - `4`, `4.2`, `4.2.3` – 34.81 MB
-  - `0.12`, `0.12.9` – 32.14 MB
-  - `0.10`, `0.10.41` – 27.46 MB
+  - `0.12`, `0.12.9` – 32.08 MB
+  - `0.10`, `0.10.41` – 27.44 MB
 - Base install with node built as a static binary with no npm:
   - `base`, `base-5`, `base-5.1`, `base-5.1.1` – 25.27 MB
   - `base-4`, `base-4.2`, `base-4.2.3` – 25.04 MB
