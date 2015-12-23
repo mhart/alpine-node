@@ -9,12 +9,12 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
 - Full install built with npm (2.14.15 unless specified):
   - `latest`, `5`, `5.3`, `5.3.0` – 36.55 MB (npm 3.5.2)
   - `4`, `4.2`, `4.2.4` – 36.38 MB
-  - `0.12`, `0.12.9` – 32.08 MB
-  - `0.10`, `0.10.41` – 27.44 MB
+  - `0.12`, `0.12.9` – 33.11 MB
+  - `0.10`, `0.10.41` – 28.46 MB
 - Base install with node built as a static binary with no npm:
   - `base`, `base-5`, `base-5.3`, `base-5.3.0` – 26.01 MB
   - `base-4`, `base-4.2`, `base-4.2.4` – 25.6 MB
-  - `base-0.12`, `base-0.12.9` – 22.3 MB
+  - `base-0.12`, `base-0.12.9` – 22.31 MB
   - `base-0.10`, `base-0.10.41` – 18.5 MB
 
 Major io.js versions [are tagged too](https://hub.docker.com/r/mhart/alpine-node/tags/).
