@@ -1,19 +1,19 @@
 Minimal Node.js Docker Images (18MB, or 6.6MB compressed)
 ---------------------------------------------------------
 
-Versions v5.5.0, v4.2.6, v0.12.9, v0.10.41, and io.js – built on [Alpine Linux](https://alpinelinux.org/).
+Versions v5.5.0, v4.3.0, v0.12.9, v0.10.41, and io.js – built on [Alpine Linux](https://alpinelinux.org/).
 
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
 but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
 
-- Full install built with npm (2.14.16 unless specified):
+- Full install built with npm (2.14.18 unless specified):
   - `latest`, `5`, `5.5`, `5.5.0` – 37.01 MB (npm 3.5.3)
-  - `4`, `4.2`, `4.2.6` – 36.41 MB
+  - `4`, `4.3`, `4.3.0` – 36.71 MB
   - `0.12`, `0.12.9` – 33.11 MB
   - `0.10`, `0.10.41` – 28.46 MB
 - Base install with node built as a static binary with no npm:
   - `base`, `base-5`, `base-5.5`, `base-5.5.0` – 27.54 MB
-  - `base-4`, `base-4.2`, `base-4.2.6` – 25.63 MB
+  - `base-4`, `base-4.3`, `base-4.3.0` – 25.63 MB
   - `base-0.12`, `base-0.12.9` – 22.31 MB
   - `base-0.10`, `base-0.10.41` – 18.5 MB
 
@@ -26,7 +26,7 @@ Example
     v5.5.0
 
     $ docker run mhart/alpine-node:4 node --version
-    v4.2.6
+    v4.3.0
 
     $ docker run mhart/alpine-node npm --version
     3.5.3
@@ -58,14 +58,10 @@ then you don't need an `npm install` step in your Dockerfile and you don't need
     ADD . .
 
     # If you have native dependencies, you'll need extra tools
-    # RUN apk add --update make gcc g++ python
+    # RUN apk add --no-cache make gcc g++ python
 
     # If you need npm, don't use a base tag
     # RUN npm install
-
-    # If you had native dependencies you can now remove build tools
-    # RUN apk del make gcc g++ python && \
-    #   rm -rf /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp
 
     EXPOSE 3000
     CMD ["node", "index.js"]
