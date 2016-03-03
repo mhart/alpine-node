@@ -1,6 +1,6 @@
 # FROM mhart/alpine-node:0.10
-# FROM mhart/alpine-node:0.12
-FROM mhart/alpine-node:4
+FROM mhart/alpine-node:0.12
+# FROM mhart/alpine-node:4
 ENV NPM_VERSION=2
 
 # FROM mhart/alpine-node:5
