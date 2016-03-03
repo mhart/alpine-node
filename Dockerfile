@@ -33,7 +33,7 @@ RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxc
     npm install -g npm@${NPM_VERSION} && \
     find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
   fi && \
-  apk del curl make gcc g++ binutils-gold python linux-headers paxctl ${DEL_PKGS} && \
+  apk del curl make gcc g++ binutils-gold python linux-headers paxctl gnupg ${DEL_PKGS} && \
   rm -rf /etc/ssl /node-${VERSION} ${RM_DIRS} \
     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
