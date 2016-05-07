@@ -26,7 +26,10 @@ RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxc
   tar -zxf node-${VERSION}.tar.gz && \
   cd /node-${VERSION} && \
   ./configure --prefix=/usr ${CONFIG_FLAGS} && \
-  make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
+  NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
+  make -j${NPROC} -C out mksnapshot BUILDTYPE=Release && \
+  paxctl -cm out/Release/mksnapshot && \
+  make -j${NPROC} && \
   make install && \
   paxctl -cm /usr/bin/node && \
   cd / && \
