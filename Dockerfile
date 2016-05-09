@@ -25,9 +25,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers paxctl libgcc libs
   grep node-${VERSION}.tar.gz SHASUMS256.txt.asc | sha256sum -c - && \
   tar -zxf node-${VERSION}.tar.gz && \
   cd node-${VERSION} && \
-  if [ -f deps/v8/build/toolchain.gypi ]; then \
-    sed -i -e "s/'linux_use_gold_flags%': 1/'linux_use_gold_flags%': 0/" deps/v8/build/toolchain.gypi; \
-  fi && \
+  export GYP_DEFINES="linux_use_gold_flags=0" && \
   ./configure --prefix=/usr ${CONFIG_FLAGS} && \
   NPROC=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
   make -j${NPROC} -C out mksnapshot BUILDTYPE=Release && \
