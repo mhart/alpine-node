@@ -36,6 +36,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers paxctl libgcc libs
   cd / && \
   if [ -x /usr/bin/npm ]; then \
     npm install -g npm@${NPM_VERSION} && \
+    npm install -g bower && \
     find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
   fi && \
   apk del curl make gcc g++ python linux-headers paxctl gnupg ${DEL_PKGS} && \
