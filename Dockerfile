@@ -8,7 +8,7 @@ ENV VERSION=v0.10.45 CFLAGS="-D__USE_MISC" NPM_VERSION=2
 # ENV VERSION=v6.2.1 NPM_VERSION=3
 
 # For base builds
-# ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
+ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers paxctl libgcc libstdc++ gnupg && \
