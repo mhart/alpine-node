@@ -1,8 +1,14 @@
 Minimal Node.js Docker Images (18MB, or 6.7MB compressed)
 ---------------------------------------------------------
 
-Versions v6.2.2, v5.11.1, v4.4.5, v0.12.14, v0.10.45, and io.js –
+Versions v6.2.2, v5.11.1, v4.4.6, v0.12.14, v0.10.45, and io.js –
 built on [Alpine Linux](https://alpinelinux.org/).
+
+*NB: All images were recently updated to [Alpine
+3.4](https://alpinelinux.org/posts/Alpine-3.4.0-released.html) – there
+shouldn't be any breaking changes unless you rely on other apk packages. `php`
+has been renamed to `php5`, `cron` to `crond` and most `ruby-*` pkgs have been
+removed in favor of `gem`*
 
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
 but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
@@ -10,7 +16,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`):
 - Full install built with npm:
   - `latest`, `6`, `6.2`, `6.2.2` – 46.22 MB (npm 3.9.6)
   - `5`, `5.11`, `5.11.1` – 39.36 MB (npm 3.8.9)
-  - `4`, `4.4`, `4.4.5` – 36.31 MB (npm 2.15.6)
+  - `4`, `4.4`, `4.4.6` – 36.97 MB (npm 2.15.8)
   - `0.12`, `0.12.14` – 32.93 MB (npm 2.15.5)
   - `0.10`, `0.10.45` – 28.38 MB (npm 2.15.5)
 - Base install with node built as a static binary with no npm:
@@ -35,7 +41,7 @@ Examples
     v5.11.1
 
     $ docker run mhart/alpine-node:4 node --version
-    v4.4.5
+    v4.4.6
 
     $ docker run mhart/alpine-node:base node --version
     v6.2.2
@@ -72,15 +78,10 @@ then you don't need an `npm install` step in your Dockerfile and you don't need
 Caveats
 -------
 
-Tags 6.x of this image now use Alpine 3.4 – earlier versions use Alpine 3.3
-although this may change if there are no issues reported with 3.4
-
 As Alpine Linux uses musl, you may run into some issues with environments
-expecting glibc-like behaviour (for example, Kubernetes). Some of these issues
-are documented here:
-
-- http://gliderlabs.viewdocs.io/docker-alpine/caveats/
-- https://github.com/gliderlabs/docker-alpine/issues/8
+expecting glibc-like behavior – especially if you try to use binaries compiled
+with glibc. You should recompile these binaries to use musl (compiling on
+Alpine is probably the easiest way to do this).
 
 Inspired by:
 
