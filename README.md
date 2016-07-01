@@ -13,11 +13,11 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm:
-  - `latest`, `6`, `6.2`, `6.2.2` – 46.22 MB (npm 3.9.6)
-  - `5`, `5.12`, `5.12.0` – 38.28 MB (npm 3.9.6)
-  - `4`, `4.4`, `4.4.7` – 36.98 MB (npm 2.15.8)
-  - `0.12`, `0.12.15` – 33.58 MB (npm 2.15.8)
-  - `0.10`, `0.10.46` – 29.03 MB (npm 2.15.8)
+  - `latest`, `6`, `6.2`, `6.2.2` – 46.22 MB (npm 3.10.3)
+  - `5`, `5.12`, `5.12.0` – 37.63 MB (npm 3.10.3)
+  - `4`, `4.4`, `4.4.7` – 36.2 MB (npm 2.15.9)
+  - `0.12`, `0.12.15` – 32.8 MB (npm 2.15.9)
+  - `0.10`, `0.10.46` – 28.25 MB (npm 2.15.9)
 - Base install with node built as a static binary with no npm:
   - `base`, `base-6`, `base-6.2`, `base-6.2.2` – 35.09 MB
   - `base-5`, `base-5.12`, `base-5.12.0` – 28.29 MB
@@ -34,7 +34,7 @@ Examples
     v6.2.2
 
     $ docker run mhart/alpine-node npm --version
-    3.9.6
+    3.10.3
 
     $ docker run mhart/alpine-node:5 node --version
     v5.12.0
