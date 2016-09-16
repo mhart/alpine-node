@@ -34,7 +34,7 @@ Examples
     v6.6.0
 
     $ docker run mhart/alpine-node npm --version
-    3.10.6
+    3.10.7
 
     $ docker run mhart/alpine-node:5 node --version
     v5.12.0
