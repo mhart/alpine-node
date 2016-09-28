@@ -23,7 +23,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `base-5`, `base-5.12`, `base-5.12.0` – 27.64 MB
   - `base-4`, `base-4.6`, `base-4.6.0` – 27.19 MB
   - `base-0.12`, `base-0.12.16` – 24.07 MB
-  - `base-0.10`, `base-0.10.46` – 18.3 MB
+  - `base-0.10`, `base-0.10.47` – 18.22 MB
 
 Major io.js versions [are tagged too](https://hub.docker.com/r/mhart/alpine-node/tags/).
 
@@ -46,7 +46,7 @@ Examples
     v6.7.0
 
     $ docker run mhart/alpine-node:base-0.10 node --version
-    v0.10.46
+    v0.10.47
 
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
