@@ -1,24 +1,22 @@
 Minimal Node.js Docker Images (18MB, or 6.7MB compressed)
 ---------------------------------------------------------
 
-Versions v6.9.1, v4.6.1, v0.12.17 and v0.10.48 –
+Versions v7.0.0, v6.9.1, v4.6.1, v0.12.17 and v0.10.48 –
 built on [Alpine Linux](https://alpinelinux.org/).
-
-*NB: All images were recently updated to [Alpine 3.4](https://alpinelinux.org/posts/Alpine-3.4.0-released.html) –
-there shouldn't be any breaking changes unless you rely on other apk packages. `php` has been
-renamed to `php5`, `cron` to `crond` and most `ruby-` pkgs have been removed in favor of `gem`*
 
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
 but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`). The sizes are for the
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm:
-  - `latest`, `6`, `6.9`, `6.9.1` – 49.73 MB (npm 3.10.8)
+  - `latest`, `7`, `7.0`, `7.0.0` – 53.24 MB (npm 3.10.9)
+  - `6`, `6.9`, `6.9.1` – 49.73 MB (npm 3.10.8)
   - `4`, `4.6`, `4.6.1` – 36.14 MB (npm 2.15.11)
   - `0.12`, `0.12.17` – 32.71 MB (npm 2.15.11)
   - `0.10`, `0.10.48` – 28.16 MB (npm 2.15.11)
 - Base install with node built as a static binary with no npm:
-  - `base`, `base-6`, `base-6.9`, `base-6.9.1` – 38.17 MB
+  - `base`, `base-7`, `base-7.0`, `base-7.0.0` – 38.17 MB
+  - `base-6`, `base-6.9`, `base-6.9.1` – 38.17 MB
   - `base-4`, `base-4.6`, `base-4.6.1` – 27.2 MB
   - `base-0.12`, `base-0.12.17` – 24.07 MB
   - `base-0.10`, `base-0.10.48` – 18.22 MB
@@ -29,16 +27,16 @@ Examples
 --------
 
     $ docker run mhart/alpine-node node --version
-    v6.9.1
+    v7.0.0
 
     $ docker run mhart/alpine-node npm --version
-    3.10.8
+    3.10.9
 
-    $ docker run mhart/alpine-node:4 node --version
-    v4.6.1
+    $ docker run mhart/alpine-node:6 node --version
+    v6.9.1
 
     $ docker run mhart/alpine-node:base node --version
-    v6.9.1
+    v7.0.0
 
     $ docker run mhart/alpine-node:base-0.10 node --version
     v0.10.48
@@ -53,9 +51,8 @@ then you don't need an `npm install` step in your Dockerfile and you don't need
 `npm` installed in your Docker image – so you can use one of the smaller
 `base*` images.
 
-    FROM mhart/alpine-node:base
-    # FROM mhart/alpine-node:base-4
-    # FROM mhart/alpine-node
+    FROM mhart/alpine-node:base-6
+    # FROM mhart/alpine-node:6
 
     WORKDIR /src
     ADD . .
