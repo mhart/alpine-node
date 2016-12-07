@@ -2,13 +2,13 @@ FROM alpine:3.4
 
 # ENV VERSION=v0.10.48 CFLAGS="-D__USE_MISC" NPM_VERSION=2
 # ENV VERSION=v0.12.17 NPM_VERSION=2
-ENV VERSION=v4.7.0 NPM_VERSION=2
+# ENV VERSION=v4.7.0 NPM_VERSION=2
 # ENV VERSION=v6.9.2 NPM_VERSION=3
-# ENV VERSION=v7.2.0 NPM_VERSION=3
+ENV VERSION=v7.2.1 NPM_VERSION=3
 
 # For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
-ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
+# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers paxctl libgcc libstdc++ gnupg && \
   gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
