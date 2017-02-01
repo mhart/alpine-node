@@ -30,7 +30,7 @@ Examples
     v7.5.0
 
     $ docker run mhart/alpine-node npm --version
-    4.0.5
+    4.1.2
 
     $ docker run mhart/alpine-node:6 node --version
     v6.9.5
