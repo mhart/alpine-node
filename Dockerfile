@@ -1,12 +1,12 @@
-# FROM alpine:3.4
-FROM alpine:3.5
+FROM alpine:3.4
+# FROM alpine:3.5
 
 # ENV VERSION=v4.8.1 NPM_VERSION=2
-# ENV VERSION=v6.10.1 NPM_VERSION=3
-ENV VERSION=v7.8.0 NPM_VERSION=4
+ENV VERSION=v6.10.2 NPM_VERSION=3
+# ENV VERSION=v7.8.0 NPM_VERSION=4
 
 # For base builds
-ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
+# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ && \
   gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
