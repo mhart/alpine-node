@@ -1,5 +1,6 @@
 # FROM alpine:3.4
-FROM alpine:3.5
+# FROM alpine:3.5
+FROM alpine:3.6
 
 # ENV VERSION=v4.8.3 NPM_VERSION=2
 # ENV VERSION=v6.10.3 NPM_VERSION=3
