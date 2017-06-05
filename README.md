@@ -8,14 +8,14 @@ All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpi
 but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`). The sizes are for the
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
-- Full install built with npm:
+- Full install built with npm and yarn:
   - `latest`, `8`, `8.0`, `8.0.0` – 62.3 MB (npm 5.0.0, yarn 0.24.6)
   - `7`, `7.10`, `7.10.0` – 56.8 MB (npm 4.5.0)
   - `6`, `6.10`, `6.10.3` – 49.3 MB (npm 3.10.10)
   - `4`, `4.8`, `4.8.3` – 35.8 MB (npm 2.15.12)
   - `0.12`, `0.12.18` – 33.36 MB (npm 2.15.11)
   - `0.10`, `0.10.48` – 28.16 MB (npm 2.15.11)
-- Base install with node built as a static binary with no npm:
+- Base install with node built as a static binary with no npm or yarn:
   - `base`, `base-8`, `base-8.0`, `base-8.0.0` – 44.1 MB
   - `base-7`, `base-7.10`, `base-7.10.0` – 43.5 MB
   - `base-6`, `base-6.10`, `base-6.10.3` – 37.8 MB
