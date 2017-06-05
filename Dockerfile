@@ -7,7 +7,7 @@ FROM alpine:3.6
 ENV VERSION=v8.0.0 NPM_VERSION=5 YARN_VERSION=latest
 
 # For base builds
-ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
+# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ && \
   gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
@@ -34,9 +34,10 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
       6A010C5166006599AA17F08146C2130DFD2497F5 && \
     curl -sSL -O https://yarnpkg.com/${YARN_VERSION}.tar.gz -O https://yarnpkg.com/${YARN_VERSION}.tar.gz.asc && \
     gpg --batch --verify ${YARN_VERSION}.tar.gz.asc ${YARN_VERSION}.tar.gz && \
-    mkdir ~/.yarn && \
-    tar -xf ${YARN_VERSION}.tar.gz -C ~/.yarn --strip 1 && \
-    ln -s ~/.yarn/bin/yarn /usr/bin/ && \
+    mkdir /usr/local/share/yarn && \
+    tar -xf ${YARN_VERSION}.tar.gz -C /usr/local/share/yarn --strip 1 && \
+    ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
+    ln -s /usr/local/share/yarn/bin/yarnpkg /usr/local/bin/ && \
     rm ${YARN_VERSION}.tar.gz*; \
   fi && \
   apk del curl make gcc g++ python linux-headers binutils-gold gnupg ${DEL_PKGS} && \
