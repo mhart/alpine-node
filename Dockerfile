@@ -1,10 +1,10 @@
-# FROM alpine:3.4
-FROM alpine:3.6
+FROM alpine:3.4
+# FROM alpine:3.6
 
 # ENV VERSION=v4.8.3 NPM_VERSION=2
-# ENV VERSION=v6.10.3 NPM_VERSION=3
+ENV VERSION=v6.11.0 NPM_VERSION=3
 # ENV VERSION=v7.10.0 NPM_VERSION=4
-ENV VERSION=v8.0.0 NPM_VERSION=5 YARN_VERSION=latest
+# ENV VERSION=v8.0.0 NPM_VERSION=5 YARN_VERSION=latest
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
@@ -30,15 +30,17 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
   if [ -z "$CONFIG_FLAGS" ]; then \
     npm install -g npm@${NPM_VERSION} && \
     find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf && \
-    gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
-      6A010C5166006599AA17F08146C2130DFD2497F5 && \
-    curl -sSL -O https://yarnpkg.com/${YARN_VERSION}.tar.gz -O https://yarnpkg.com/${YARN_VERSION}.tar.gz.asc && \
-    gpg --batch --verify ${YARN_VERSION}.tar.gz.asc ${YARN_VERSION}.tar.gz && \
-    mkdir /usr/local/share/yarn && \
-    tar -xf ${YARN_VERSION}.tar.gz -C /usr/local/share/yarn --strip 1 && \
-    ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
-    ln -s /usr/local/share/yarn/bin/yarnpkg /usr/local/bin/ && \
-    rm ${YARN_VERSION}.tar.gz*; \
+    if [ -n "$YARN_VERSION" ]; then \
+      gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
+        6A010C5166006599AA17F08146C2130DFD2497F5 && \
+      curl -sSL -O https://yarnpkg.com/${YARN_VERSION}.tar.gz -O https://yarnpkg.com/${YARN_VERSION}.tar.gz.asc && \
+      gpg --batch --verify ${YARN_VERSION}.tar.gz.asc ${YARN_VERSION}.tar.gz && \
+      mkdir /usr/local/share/yarn && \
+      tar -xf ${YARN_VERSION}.tar.gz -C /usr/local/share/yarn --strip 1 && \
+      ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
+      ln -s /usr/local/share/yarn/bin/yarnpkg /usr/local/bin/ && \
+      rm ${YARN_VERSION}.tar.gz*; \
+    fi; \
   fi && \
   apk del curl make gcc g++ python linux-headers binutils-gold gnupg ${DEL_PKGS} && \
   rm -rf ${RM_DIRS} /node-${VERSION}* /usr/share/man /tmp/* /var/cache/apk/* \
