@@ -1,7 +1,7 @@
 Minimal Node.js Docker Images
 -----------------------------
 
-Versions v8.1.3, v6.11.0, v4.8.3, v0.12.18 and v0.10.48 –
+Versions v8.1.4, v6.11.0, v4.8.3, v0.12.18 and v0.10.48 –
 built on [Alpine Linux](https://alpinelinux.org/).
 
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
@@ -9,7 +9,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `8`, `8.1`, `8.1.3` – 64 MB (npm 5.1.0, yarn 0.27.5)
+  - `latest`, `8`, `8.1`, `8.1.4` – 64.3 MB (npm 5.2.0, yarn 0.27.5)
 - Full install build with npm:
   - `6`, `6.11`, `6.11.0` – 49.3 MB (npm 3.10.10)
   - `4`, `4.8`, `4.8.3` – 35.8 MB (npm 2.15.12)
@@ -28,10 +28,10 @@ Examples
 --------
 
     $ docker run mhart/alpine-node node --version
-    v8.1.3
+    v8.1.4
 
     $ docker run mhart/alpine-node npm --version
-    5.1.0
+    5.2.0
 
     $ docker run mhart/alpine-node yarn --version
     0.27.5
@@ -40,7 +40,7 @@ Examples
     v6.11.0
 
     $ docker run mhart/alpine-node:base node --version
-    v8.1.3
+    v8.1.4
 
     $ docker run mhart/alpine-node:base-0.10 node --version
     v0.10.48
