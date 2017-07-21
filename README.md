@@ -16,7 +16,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `0.12`, `0.12.18` – 33.36 MB (npm 2.15.11)
   - `0.10`, `0.10.48` – 28.16 MB (npm 2.15.11)
 - Base install with node built as a static binary with no npm or yarn:
-  - `base`, `base-8`, `base-8.2`, `base-8.2.0` – 43.4 MB
+  - `base`, `base-8`, `base-8.2`, `base-8.2.1` – 43.4 MB
   - `base-6`, `base-6.11`, `base-6.11.1` – 37.2 MB
   - `base-4`, `base-4.8`, `base-4.8.4` – 26.6 MB
   - `base-0.12`, `base-0.12.18` – 24.72 MB
@@ -40,7 +40,7 @@ Examples
     v6.11.1
 
     $ docker run mhart/alpine-node:base node --version
-    v8.2.0
+    v8.2.1
 
     $ docker run mhart/alpine-node:base-0.10 node --version
     v0.10.48
