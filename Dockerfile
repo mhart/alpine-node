@@ -6,7 +6,7 @@ ENV VERSION=v6.11.2 NPM_VERSION=3
 # ENV VERSION=v8.2.1 NPM_VERSION=5 YARN_VERSION=latest
 
 # For base builds
-# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
+ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ && \
   gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
