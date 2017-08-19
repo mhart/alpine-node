@@ -48,27 +48,46 @@ Examples
 Example Dockerfile for your own Node.js project
 -----------------------------------------------
 
-If you don't have any native dependencies, ie only depend on pure-JS npm
-modules, then my suggestion is to run `npm install` locally *before* running
-`docker build` (and make sure `node_modules` isn't in your `.dockerignore`) –
-then you don't need an `npm install` step in your Dockerfile and you don't need
-`npm` installed in your Docker image – so you can use one of the smaller
-`base*` images.
+Assuming you're doing your `npm install` or `yarn install` from your
+`Dockerfile`, you'll probably want to add `node_modules` to your
+`.dockerignore` file first, so that it doesn't get sent to the docker daemon.
 
-    FROM mhart/alpine-node:base-6
-    # FROM mhart/alpine-node:6
+Here's a typical example using a "full install" image:
 
-    WORKDIR /src
-    ADD . .
+    FROM mhart/alpine-node:8
+
+    WORKDIR /app
+    COPY . .
 
     # If you have native dependencies, you'll need extra tools
     # RUN apk add --no-cache make gcc g++ python
 
-    # If you need npm, don't use a base tag
-    # RUN npm install
+    RUN npm install --production
 
     EXPOSE 3000
     CMD ["node", "index.js"]
+
+However, for an even smaller build: from Docker version 17.05 onwards, you can
+do multi-stage builds – so you can `npm install` or `yarn install` using the
+full install image, but then create your app using one of the base images –
+this can reduce the size of your final image by ~35MB or so.
+
+    # Do the npm install or yarn install in the full image
+    FROM mhart/alpine-node:8
+    WORKDIR /app
+    COPY package.json yarn.lock ./
+    RUN yarn install --production
+
+    # And then copy over node_modules from that stage to the smaller base image
+    FROM mhart/alpine-node:base-8
+    WORKDIR /app
+    COPY --from=0 /app .
+    COPY . .
+    EXPOSE 3000
+    CMD ["node", "index.js"]
+
+NB: both of the above blocks should be in the one `Dockerfile`. The `--from=0`
+indicates to copy from the build in the first stage.
 
 Caveats
 -------
