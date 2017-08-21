@@ -78,7 +78,7 @@ this can reduce the size of your final image by ~35MB or so.
     COPY package.json yarn.lock ./
     RUN yarn install --production
 
-    # And then copy over node_modules from that stage to the smaller base image
+    # And then copy over node_modules, etc from that stage to the smaller base image
     FROM mhart/alpine-node:base-8
     WORKDIR /app
     COPY --from=0 /app .
@@ -86,8 +86,33 @@ this can reduce the size of your final image by ~35MB or so.
     EXPOSE 3000
     CMD ["node", "index.js"]
 
-NB: both of the above blocks should be in the one `Dockerfile`. The `--from=0`
-indicates to copy from the build in the first stage.
+It should be noted that the `base-` images are statically compiled, so may not
+work if you have native npm module dependencies.
+
+Another option, which *will* work with native modules and also has the advantage
+of not needing to pull another container down from Docker, is just to copy the
+node binary and libstdc++ libraries from the full image onto a straight alpine
+image:
+
+    FROM mhart/alpine-node:8
+    WORKDIR /app
+    COPY package.json yarn.lock ./
+    RUN yarn install --production
+
+    # Only copy over the node pieces we need from the above image
+    FROM alpine:3.6
+    COPY --from=0 /usr/bin/node /usr/bin/
+    COPY --from=0 /usr/lib/libgcc* /usr/lib/libstdc* /usr/lib/
+    WORKDIR /app
+    COPY --from=0 /app .
+    COPY . .
+    EXPOSE 3000
+    CMD ["node", "index.js"]
+
+Another advantage of this approach is that the full images are typically
+updated first, before the `base-` images, so you might get updates slightly
+sooner. The main disadvantage is that it requires a slightly larger, slightly
+messier Dockerfile.
 
 Caveats
 -------
