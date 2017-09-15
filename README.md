@@ -9,7 +9,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `8`, `8.5`, `8.5.0` – 65.8 MB (npm 5.4.1, yarn 1.0.2)
+  - `latest`, `8`, `8.5`, `8.5.0` – 65.8 MB (npm 5.4.2, yarn 1.0.2)
 - Full install build with npm:
   - `6`, `6.11`, `6.11.3` – 49.4 MB (npm 3.10.10)
   - `4`, `4.8`, `4.8.4` – 35.2 MB (npm 2.15.12)
@@ -32,7 +32,7 @@ $ docker run mhart/alpine-node node --version
 v8.5.0
 
 $ docker run mhart/alpine-node npm --version
-5.4.1
+5.4.2
 
 $ docker run mhart/alpine-node yarn --version
 1.0.2
