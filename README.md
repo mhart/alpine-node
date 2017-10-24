@@ -18,7 +18,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 - Base install with node built as a static binary with no npm or yarn:
   - `base`, `base-8`, `base-8.7`, `base-8.7.0` – 43.7 MB
   - `base-6`, `base-6.11`, `base-6.11.4` – 37.8 MB
-  - `base-4`, `base-4.8`, `base-4.8.4` – 26.6 MB
+  - `base-4`, `base-4.8`, `base-4.8.5` – 27.3 MB
   - `base-0.12`, `base-0.12.18` – 24.72 MB
   - `base-0.10`, `base-0.10.48` – 18.22 MB
 
