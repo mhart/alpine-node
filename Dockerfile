@@ -3,10 +3,10 @@ FROM alpine:3.6
 
 # ENV VERSION=v4.8.5 NPM_VERSION=2
 # ENV VERSION=v6.11.5 NPM_VERSION=3
-ENV VERSION=v8.8.0 NPM_VERSION=5 YARN_VERSION=latest
+ENV VERSION=v8.8.1 NPM_VERSION=5 YARN_VERSION=latest
 
 # For base builds
-ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
+# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ && \
   gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
@@ -17,8 +17,8 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
     C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8 \
     B9AE9905FFD7803F25714661B63B535A4C206CA9 \
     56730D5401028683275BD23C23EFEFE93C4CFFFE && \
-  curl -sSLO https://nodejs.org/dist/${VERSION}/node-${VERSION}.tar.xz && \
-  curl -sSL https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc | gpg --batch --decrypt | \
+  curl -sfSLO https://nodejs.org/dist/${VERSION}/node-${VERSION}.tar.xz && \
+  curl -sfSL https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc | gpg --batch --decrypt | \
     grep " node-${VERSION}.tar.xz\$" | sha256sum -c | grep . && \
   tar -xf node-${VERSION}.tar.xz && \
   cd node-${VERSION} && \
@@ -32,7 +32,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
     if [ -n "$YARN_VERSION" ]; then \
       gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
         6A010C5166006599AA17F08146C2130DFD2497F5 && \
-      curl -sSL -O https://yarnpkg.com/${YARN_VERSION}.tar.gz -O https://yarnpkg.com/${YARN_VERSION}.tar.gz.asc && \
+      curl -sfSL -O https://yarnpkg.com/${YARN_VERSION}.tar.gz -O https://yarnpkg.com/${YARN_VERSION}.tar.gz.asc && \
       gpg --batch --verify ${YARN_VERSION}.tar.gz.asc ${YARN_VERSION}.tar.gz && \
       mkdir /usr/local/share/yarn && \
       tar -xf ${YARN_VERSION}.tar.gz -C /usr/local/share/yarn --strip 1 && \
