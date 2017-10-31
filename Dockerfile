@@ -4,7 +4,7 @@ FROM alpine:3.6
 # ENV VERSION=v4.8.5 NPM_VERSION=2
 # ENV VERSION=v6.11.5 NPM_VERSION=3
 # ENV VERSION=v8.9.0 NPM_VERSION=5 YARN_VERSION=latest
-ENV VERSION=v9.0.0 NPM_VERSION=5 YARN_VERSION=latest
+ENV VERSION=v9.0.0 YARN_VERSION=latest
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
@@ -29,8 +29,10 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
   make install && \
   cd / && \
   if [ -z "$CONFIG_FLAGS" ]; then \
-    npm install -g npm@${NPM_VERSION} && \
-    find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf && \
+    if [ -n "$NPM_VERSION" ]; then \
+      npm install -g npm@${NPM_VERSION}; \
+    fi; \
+    find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
     if [ -n "$YARN_VERSION" ]; then \
       gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
         6A010C5166006599AA17F08146C2130DFD2497F5 && \
