@@ -32,7 +32,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
     if [ -n "$NPM_VERSION" ]; then \
       npm install -g npm@${NPM_VERSION}; \
     fi; \
-    find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
+    find /usr/lib/node_modules/npm -name test -o -name .bin -name coverage -type d | xargs rm -rf; \
     if [ -n "$YARN_VERSION" ]; then \
       gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
         6A010C5166006599AA17F08146C2130DFD2497F5 && \
