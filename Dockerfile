@@ -7,7 +7,7 @@ ENV VERSION=v4.8.6 NPM_VERSION=2
 # ENV VERSION=v9.1.0 YARN_VERSION=latest
 
 # For base builds
-# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
+ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ && \
   for server in pgp.mit.edu keyserver.pgp.com ha.pool.sks-keyservers.net; do \
