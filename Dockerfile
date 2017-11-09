@@ -23,7 +23,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
   done && \
   curl -sfSLO https://nodejs.org/dist/${VERSION}/node-${VERSION}.tar.xz && \
   curl -sfSL https://nodejs.org/dist/${VERSION}/SHASUMS256.txt.asc | gpg --batch --decrypt | \
-    grep " node-${VERSION}.tar.xz\$" | sha256sum -c | grep . && \
+    grep " node-${VERSION}.tar.xz\$" | sha256sum -c | grep -E ': OK$' && \
   tar -xf node-${VERSION}.tar.xz && \
   cd node-${VERSION} && \
   ./configure --prefix=/usr ${CONFIG_FLAGS} && \
