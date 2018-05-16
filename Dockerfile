@@ -1,14 +1,14 @@
-FROM alpine:3.4
-# FROM alpine:3.6
+# FROM alpine:3.4
+FROM alpine:3.6
 # FROM alpine:3.7
 
 # ENV VERSION=v4.9.1 NPM_VERSION=2
-ENV VERSION=v6.14.2 NPM_VERSION=3
-# ENV VERSION=v8.11.1 NPM_VERSION=5 YARN_VERSION=latest
+# ENV VERSION=v6.14.2 NPM_VERSION=3
+ENV VERSION=v8.11.2 NPM_VERSION=5 YARN_VERSION=latest
 # ENV VERSION=v10.1.0 NPM_VERSION=6 YARN_VERSION=latest
 
 # For base builds
-ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
+# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ && \
   for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
