@@ -30,17 +30,14 @@ Examples
 --------
 
 ```console
-$ docker run mhart/alpine-node node --version
-v10.10.0
-
-$ docker run mhart/alpine-node npm --version
-6.4.1
-
-$ docker run mhart/alpine-node yarn --version
-1.9.4
-
 $ docker run mhart/alpine-node:10 node --version
 v10.10.0
+
+$ docker run mhart/alpine-node:10 npm --version
+6.4.1
+
+$ docker run mhart/alpine-node:10 yarn --version
+1.9.4
 
 $ docker run mhart/alpine-node:8 node --version
 v8.12.0
@@ -48,7 +45,7 @@ v8.12.0
 $ docker run mhart/alpine-node:6 node --version
 v6.14.4
 
-$ docker run mhart/alpine-node:base node --version
+$ docker run mhart/alpine-node:base-10 node --version
 v10.10.0
 
 $ docker run mhart/alpine-node:base-8 node --version
