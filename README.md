@@ -9,9 +9,9 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `11`, `11.0`, `11.0.0` – 69.6 MB (npm 6.4.1, yarn 1.10.1)
+  - `latest`, `11`, `11.0`, `11.0.0` – 69.8 MB (npm 6.4.1, yarn 1.12.1)
   - `10`, `10.13`, `10.13.0` – 68.7 MB (npm 6.4.1, yarn 1.12.1)
-  - `8`, `8.12`, `8.12.0` – 63.8 MB (npm 6.4.1, yarn 1.9.4)
+  - `8`, `8.12`, `8.12.0` – 64.2 MB (npm 6.4.1, yarn 1.12.1)
 - Full install build with npm:
   - `6`, `6.14`, `6.14.4` – 49.6 MB (npm 3.10.10)
   - `4`, `4.9`, `4.9.1` – 35.2 MB (npm 2.15.12)
