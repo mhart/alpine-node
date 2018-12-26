@@ -21,7 +21,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `base`, `base-11`, `base-11.5`, `base-11.5.0` – 47.5 MB
   - `base-10`, `base-10.15`, `base-10.15.0` – 46.9 MB
   - `base-8`, `base-8.14`, `base-8.14.1` – 43.1 MB
-  - `base-6`, `base-6.15`, `base-6.15.1` – 39.2 MB
+  - `base-6`, `base-6.16`, `base-6.16.0` – 39.2 MB
   - `base-4`, `base-4.9`, `base-4.9.1` – 26.6 MB
   - `base-0.12`, `base-0.12.18` – 24.1 MB
   - `base-0.10`, `base-0.10.48` – 18.2 MB
