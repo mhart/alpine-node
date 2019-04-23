@@ -17,13 +17,11 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `4`, `4.9`, `4.9.1` – 35.2 MB (npm 2.15.12)
   - `0.12`, `0.12.18` – 32.4 MB (npm 2.15.12)
   - `0.10`, `0.10.48` – 27.8 MB (npm 2.15.12)
-- Base install with node built as a static binary with no npm or yarn:
-  - `base-10`, `base-10.15`, `base-10.15.3` – 46.9 MB
-  - `base-8`, `base-8.16`, `base-8.16.0` – 43.1 MB
-  - `base-6`, `base-6.17`, `base-6.17.1` – 39.2 MB
-  - `base-4`, `base-4.9`, `base-4.9.1` – 26.6 MB
-  - `base-0.12`, `base-0.12.18` – 24.1 MB
-  - `base-0.10`, `base-0.10.48` – 18.2 MB
+- Slim install with no npm or yarn:
+  - `slim`, `slim-12`, `slim-12.0`, `slim-12.0.0` – 44.6 MB
+  - `slim-10`, `slim-10.15`, `slim-10.15.3` – 40.8 MB
+  - `slim-8`, `slim-8.16`, `slim-8.16.0` – 37.4 MB
+  - `slim-6`, `slim-6.17`, `slim-6.17.1` – 33.9 MB
 
 Examples
 --------
@@ -47,13 +45,13 @@ v8.16.0
 $ docker run --rm mhart/alpine-node:6 node --version
 v6.17.1
 
-$ docker run --rm mhart/alpine-node:base-10 node --version
+$ docker run --rm mhart/alpine-node:slim-10 node --version
 v10.15.3
 
-$ docker run --rm mhart/alpine-node:base-8 node --version
+$ docker run --rm mhart/alpine-node:slim-8 node --version
 v8.16.0
 
-$ docker run --rm mhart/alpine-node:base-0.10 node --version
+$ docker run --rm mhart/alpine-node:slim-0.10 node --version
 v0.10.48
 ```
 
@@ -83,7 +81,7 @@ CMD ["node", "index.js"]
 
 However, for an even smaller build: from Docker version 17.05 onwards, you can
 do multi-stage builds – so you can `npm ci` or `yarn install` using the
-full install image, but then create your app using a raw alpine image –
+full install image, but then create your app using the slim image –
 this can reduce the size of your final image by ~35MB or so.
 
 ```Dockerfile
@@ -93,9 +91,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --prod
 
 # Only copy over the node pieces we need from the above image
-FROM alpine:3.9
-COPY --from=0 /usr/bin/node /usr/bin/
-COPY --from=0 /usr/lib/libgcc* /usr/lib/libstdc* /usr/lib/
+FROM mhart/alpine-node:slim-12
 WORKDIR /app
 COPY --from=0 /app .
 COPY . .
