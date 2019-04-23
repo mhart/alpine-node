@@ -1,7 +1,7 @@
 Minimal Node.js Docker Images
 -----------------------------
 
-Versions v11.14.0, v10.15.3, v8.16.0, v6.17.1, v4.9.1, v0.12.18 and v0.10.48 –
+Versions v12.0.0, v10.15.3, v8.16.0, v6.17.1, v4.9.1, v0.12.18 and v0.10.48 –
 built on [Alpine Linux](https://alpinelinux.org/).
 
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
@@ -9,7 +9,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `11`, `11.14`, `11.14.0` – 74 MB (npm 6.9.0, yarn 1.15.2)
+  - `latest`, `12`, `12.0`, `12.0.0` – 75.8 MB (npm 6.9.0, yarn 1.15.2)
   - `10`, `10.15`, `10.15.3` – 70.6 MB (npm 6.9.0, yarn 1.15.2)
   - `8`, `8.16`, `8.16.0` – 66 MB (npm 6.9.0, yarn 1.15.2)
 - Full install build with npm:
@@ -18,7 +18,6 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `0.12`, `0.12.18` – 32.4 MB (npm 2.15.12)
   - `0.10`, `0.10.48` – 27.8 MB (npm 2.15.12)
 - Base install with node built as a static binary with no npm or yarn:
-  - `base`, `base-11`, `base-11.14`, `base-11.14.0` – 49.3 MB
   - `base-10`, `base-10.15`, `base-10.15.3` – 46.9 MB
   - `base-8`, `base-8.16`, `base-8.16.0` – 43.1 MB
   - `base-6`, `base-6.17`, `base-6.17.1` – 39.2 MB
@@ -30,17 +29,17 @@ Examples
 --------
 
 ```console
-$ docker run --rm mhart/alpine-node:11 node --version
-v11.14.0
+$ docker run --rm mhart/alpine-node:12 node --version
+v12.0.0
 
 $ docker run --rm mhart/alpine-node:10 node --version
 v10.15.3
 
-$ docker run --rm mhart/alpine-node:10 npm --version
-6.8.0
+$ docker run --rm mhart/alpine-node:12 npm --version
+6.9.0
 
-$ docker run --rm mhart/alpine-node:10 yarn --version
-1.13.0
+$ docker run --rm mhart/alpine-node:12 yarn --version
+1.15.2
 
 $ docker run --rm mhart/alpine-node:8 node --version
 v8.16.0
@@ -68,7 +67,7 @@ Assuming you're doing your `npm install` or `yarn install` from your
 Here's a typical example using a "full install" image:
 
 ```Dockerfile
-FROM mhart/alpine-node:10
+FROM mhart/alpine-node:12
 
 WORKDIR /app
 COPY . .
@@ -84,41 +83,17 @@ CMD ["node", "index.js"]
 
 However, for an even smaller build: from Docker version 17.05 onwards, you can
 do multi-stage builds – so you can `npm ci` or `yarn install` using the
-full install image, but then create your app using one of the base images –
+full install image, but then create your app using a raw alpine image –
 this can reduce the size of your final image by ~35MB or so.
 
 ```Dockerfile
-# Do the npm install or yarn install in the full image
-FROM mhart/alpine-node:10
-WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci --prod
-
-# And then copy over node_modules, etc from that stage to the smaller base image
-FROM mhart/alpine-node:base-8
-WORKDIR /app
-COPY --from=0 /app .
-COPY . .
-EXPOSE 3000
-CMD ["node", "index.js"]
-```
-
-It should be noted that the `base-` images are statically compiled, so may not
-work if you have native npm module dependencies.
-
-Another option, which *will* work with native modules and also has the advantage
-of not needing to pull another container down from Docker, is just to copy the
-node binary and libstdc++ libraries from the full image onto a straight alpine
-image:
-
-```Dockerfile
-FROM mhart/alpine-node:10
+FROM mhart/alpine-node:12
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --prod
 
 # Only copy over the node pieces we need from the above image
-FROM alpine:3.7
+FROM alpine:3.9
 COPY --from=0 /usr/bin/node /usr/bin/
 COPY --from=0 /usr/lib/libgcc* /usr/lib/libstdc* /usr/lib/
 WORKDIR /app
@@ -127,11 +102,6 @@ COPY . .
 EXPOSE 3000
 CMD ["node", "index.js"]
 ```
-
-Another advantage of this approach is that the full images are typically
-updated first, before the `base-` images, so you might get updates slightly
-sooner. The main disadvantage is that it requires a slightly larger, slightly
-messier Dockerfile.
 
 Caveats
 -------
