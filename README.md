@@ -107,6 +107,8 @@ expecting glibc-like behavior – especially if you try to use binaries compiled
 with glibc. You should recompile these binaries to use musl (compiling on
 Alpine is probably the easiest way to do this).
 
+If you get an error similar to `error loading shared library ld-linux-x86-64.so.2`, it may be that you have dependencies relying on libc – you can try to fix this by adding `apk add --no-cache libc6-compat` to your `Dockerfile`.
+
 Inspired by:
 
 - https://github.com/alpinelinux/aports/blob/454db196/main/nodejs/APKBUILD
