@@ -107,7 +107,7 @@ expecting glibc-like behavior – especially if you try to use binaries compiled
 with glibc. You should recompile these binaries to use musl (compiling on
 Alpine is probably the easiest way to do this).
 
-If you get an error similar to `error loading shared library ld-linux-x86-64.so.2`, it may be that you have dependencies relying on libc – you can try to fix this by adding `apk add --no-cache libc6-compat` to your `Dockerfile`.
+If you get an error similar to `error loading shared library ld-linux-x86-64.so.2`, it may be that you have dependencies relying on libc – you can try to fix this by adding `RUN apk add --no-cache libc6-compat` or `RUN ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2` to your `Dockerfile`.
 
 Inspired by:
 
