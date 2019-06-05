@@ -109,6 +109,8 @@ Alpine is probably the easiest way to do this).
 
 If you get an error similar to `error loading shared library ld-linux-x86-64.so.2`, it may be that you have dependencies relying on libc – you can try to fix this by adding `apk add --no-cache libc6-compat` to your `Dockerfile`.
 
+If adding `libc6-compat` doesn't help, you can try adding `RUN ln -s /lib/libc.musl-x86_64.so.1 /lib/ld-linux-x86-64.so.2` before running your `node` app.
+
 Inspired by:
 
 - https://github.com/alpinelinux/aports/blob/454db196/main/nodejs/APKBUILD
