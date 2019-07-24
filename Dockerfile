@@ -54,7 +54,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
     fi; \
   fi && \
   apk del curl make gcc g++ python linux-headers binutils-gold gnupg ${DEL_PKGS} && \
-  rm -rf ${RM_DIRS} /node-${VERSION}* /SHASUMS256.txt /usr/share/man /tmp/* /var/cache/apk/* \
-    /root/.npm /root/.node-gyp /usr/lib/node_modules/npm/man \
-    /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html /usr/lib/node_modules/npm/scripts && \
+  rm -rf ${RM_DIRS} /node-${VERSION}* /SHASUMS256.txt /tmp/* /var/cache/apk/* \
+    /usr/share/man/* /usr/share/doc /root/.npm /root/.node-gyp /root/.config \
+    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html /usr/lib/node_modules/npm/scripts && \
   { rm -rf /root/.gnupg || true; }
