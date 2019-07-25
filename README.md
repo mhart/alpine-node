@@ -21,7 +21,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `slim`, `slim-12`, `slim-12.7`, `slim-12.7.0` – 45.8 MB
   - `slim-10`, `slim-10.16`, `slim-10.16.0` – 42.6 MB
   - `slim-8`, `slim-8.16`, `slim-8.16.0` – 37.4 MB
-  - `slim-6`, `slim-6.17`, `slim-6.17.1` – 33.9 MB
+  - `slim-6`, `slim-6.17`, `slim-6.17.1` – 32.5 MB
 
 Examples
 --------
