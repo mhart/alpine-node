@@ -1,19 +1,18 @@
-# FROM mhart/alpine-node:8
-# FROM alpine:3.6
+FROM mhart/alpine-node:8
+FROM alpine:3.6
 
-FROM mhart/alpine-node:10
-FROM alpine:3.7
+# FROM mhart/alpine-node:10
+# FROM alpine:3.7
 
 # FROM mhart/alpine-node:12
 # FROM alpine:3.9
 
 COPY --from=0 /usr/bin/node /usr/bin/
-COPY --from=0 /usr/lib/libgcc* /usr/lib/libstdc* /usr/lib/
 COPY --from=0 /usr/lib/node_modules /usr/lib/node_modules
 COPY --from=0 /usr/include/node /usr/include/node
 COPY --from=0 /usr/share/systemtap/tapset/node.stp /usr/share/systemtap/tapset/
 
-RUN apk add --no-cache curl gnupg && \
+RUN apk add --no-cache curl gnupg libstdc++ && \
   /usr/lib/node_modules/npm/bin/npm-cli.js install -g npm@latest && \
   find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf && \
   for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \

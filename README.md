@@ -10,8 +10,8 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 
 - Full install built with npm and yarn:
   - `latest`, `12`, `12.7`, `12.7.0` – 78 MB (npm 6.10.2, yarn 1.17.3)
-  - `10`, `10.16`, `10.16.0` – 75.4 MB (npm 6.10.2, yarn 1.17.3)
-  - `8`, `8.16`, `8.16.0` – 68.1 MB (npm 6.10.2, yarn 1.17.3)
+  - `10`, `10.16`, `10.16.0` – 74 MB (npm 6.10.2, yarn 1.17.3)
+  - `8`, `8.16`, `8.16.0` – 66.7 MB (npm 6.10.2, yarn 1.17.3)
 - Full install build with npm:
   - `6`, `6.17`, `6.17.1` – 49 MB (npm 3.10.10)
   - `4`, `4.9`, `4.9.1` – 35.2 MB (npm 2.15.12)
