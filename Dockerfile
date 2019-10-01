@@ -5,12 +5,10 @@ FROM alpine:3.9
 # ENV VERSION=v6.17.1 NPM_VERSION=3
 # ENV VERSION=v8.16.1 NPM_VERSION=6 YARN_VERSION=latest
 # ENV VERSION=v10.16.3 NPM_VERSION=6 YARN_VERSION=latest
-ENV VERSION=v12.11.0 NPM_VERSION=6 YARN_VERSION=latest
+ENV VERSION=v12.11.1 NPM_VERSION=6 YARN_VERSION=latest
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
-
-# XXX: Includes hack to fix v12.11.0 build issue, remove in next version
 
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ && \
   for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
@@ -32,7 +30,6 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
   grep " node-${VERSION}.tar.xz\$" SHASUMS256.txt | sha256sum -c | grep ': OK$' && \
   tar -xf node-${VERSION}.tar.xz && \
   cd node-${VERSION} && \
-  curl -sfSL https://github.com/nodejs/node/archive/${VERSION}.tar.gz | tar -xz --strip-components=1 -- node-12.11.0/deps/v8/test/torque/test-torque.tq && \
   ./configure --prefix=/usr ${CONFIG_FLAGS} && \
   make -j$(getconf _NPROCESSORS_ONLN) && \
   make install && \
