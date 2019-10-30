@@ -7,6 +7,9 @@ FROM alpine:3.6
 # FROM mhart/alpine-node:12
 # FROM alpine:3.9
 
+# FROM mhart/alpine-node:13
+# FROM alpine:3.10
+
 COPY --from=0 /usr/bin/node /usr/bin/
 COPY --from=0 /usr/lib/node_modules /usr/lib/node_modules
 COPY --from=0 /usr/include/node /usr/include/node
