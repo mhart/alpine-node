@@ -1,12 +1,12 @@
 # FROM alpine:3.6
 # FROM alpine:3.7
-# FROM alpine:3.9
-FROM alpine:3.10
+FROM alpine:3.9
+# FROM alpine:3.10
 
 # ENV VERSION=v8.16.2 NPM_VERSION=6 YARN_VERSION=latest
 # ENV VERSION=v10.17.0 NPM_VERSION=6 YARN_VERSION=latest
-# ENV VERSION=v12.13.0 NPM_VERSION=6 YARN_VERSION=latest
-ENV VERSION=v13.1.0 NPM_VERSION=6 YARN_VERSION=latest
+ENV VERSION=v12.13.1 NPM_VERSION=6 YARN_VERSION=latest
+# ENV VERSION=v13.1.0 NPM_VERSION=6 YARN_VERSION=latest
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
@@ -39,7 +39,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
     if [ -n "$NPM_VERSION" ]; then \
       npm install -g npm@${NPM_VERSION}; \
     fi; \
-    find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
+    find /usr/lib/node_modules/npm -type d \( -name test -o -name .bin \) | xargs rm -rf; \
     if [ -n "$YARN_VERSION" ]; then \
       for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
         gpg --keyserver $server --recv-keys \
@@ -57,5 +57,6 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
   apk del curl make gcc g++ python linux-headers binutils-gold gnupg ${DEL_PKGS} && \
   rm -rf ${RM_DIRS} /node-${VERSION}* /SHASUMS256.txt /tmp/* /var/cache/apk/* \
     /usr/share/man/* /usr/share/doc /root/.npm /root/.node-gyp /root/.config \
-    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html /usr/lib/node_modules/npm/scripts && \
+    /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/docs \
+    /usr/lib/node_modules/npm/html /usr/lib/node_modules/npm/scripts && \
   { rm -rf /root/.gnupg || true; }
