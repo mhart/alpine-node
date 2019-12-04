@@ -10,9 +10,9 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 
 - Full install built with npm and yarn:
   - `latest`, `13`, `13.3`, `13.3.0` – 104 MB (npm 6.13.2, yarn 1.19.2)
-  - `12`, `12.13`, `12.13.1` – 78.6 MB (npm 6.13.1, yarn 1.19.1)
-  - `10`, `10.17`, `10.17.0` – 74.3 MB (npm 6.12.0, yarn 1.19.1)
-  - `8`, `8.16`, `8.16.2` – 66.4 MB (npm 6.12.0, yarn 1.19.1)
+  - `12`, `12.13`, `12.13.1` – 78.6 MB (npm 6.13.2, yarn 1.19.2)
+  - `10`, `10.17`, `10.17.0` – 73.6 MB (npm 6.13.2, yarn 1.19.2)
+  - `8`, `8.16`, `8.16.2` – 66.3 MB (npm 6.13.2, yarn 1.19.2)
 - Full install build with npm:
   - `6`, `6.17`, `6.17.1` – 49 MB (npm 3.10.10)
   - `4`, `4.9`, `4.9.1` – 35.2 MB (npm 2.15.12)
@@ -36,25 +36,19 @@ $ docker run --rm mhart/alpine-node:10 node --version
 v10.17.0
 
 $ docker run --rm mhart/alpine-node:12 npm --version
-6.12.0
+6.13.2
 
 $ docker run --rm mhart/alpine-node:12 yarn --version
-1.19.1
+1.19.2
 
 $ docker run --rm mhart/alpine-node:8 node --version
 v8.16.2
-
-$ docker run --rm mhart/alpine-node:6 node --version
-v6.17.1
 
 $ docker run --rm mhart/alpine-node:slim-10 node --version
 v10.17.0
 
 $ docker run --rm mhart/alpine-node:slim-8 node --version
 v8.16.2
-
-$ docker run --rm mhart/alpine-node:slim-0.10 node --version
-v0.10.48
 ```
 
 Example Dockerfile for your own Node.js project
