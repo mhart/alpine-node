@@ -11,7 +11,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 - Full install built with npm and yarn:
   - `latest`, `13`, `13.6`, `13.6.0` – 110 MB (npm 6.13.6, yarn 1.21.1)
   - `12`, `12.14`, `12.14.1` – 82.9 MB (npm 6.13.6, yarn 1.21.1)
-  - `10`, `10.18`, `10.18.1` – 73.7 MB (npm 6.13.6, yarn 1.21.1)
+  - `10`, `10.18`, `10.18.1` – 74.4 MB (npm 6.13.6, yarn 1.21.1)
   - `8`, `8.17`, `8.17.0` – 66.5 MB (npm 6.13.6, yarn 1.21.1)
 - Full install build with npm:
   - `6`, `6.17`, `6.17.1` – 49 MB (npm 3.10.10)
@@ -21,7 +21,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 - Slim install with no npm or yarn:
   - `slim`, `slim-13`, `slim-13.6`, `slim-13.6.0` – 75 MB
   - `slim-12`, `slim-12.14`, `slim-12.14.1` – 49.2 MB
-  - `slim-10`, `slim-10.18`, `slim-10.18.1` – 41.2 MB
+  - `slim-10`, `slim-10.18`, `slim-10.18.1` – 41.9 MB
   - `slim-8`, `slim-8.17`, `slim-8.17.0` – 36.1 MB
   - `slim-6`, `slim-6.17`, `slim-6.17.1` – 32.5 MB
 
