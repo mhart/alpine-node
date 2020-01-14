@@ -1,10 +1,11 @@
-# FROM alpine:3.9
-FROM alpine:3.10
+FROM alpine:3.9
+# FROM alpine:3.10
 
-# ENV VERSION=v12.14.1 NPM_VERSION=6 YARN_VERSION=latest
-ENV VERSION=v13.6.0 NPM_VERSION=6 YARN_VERSION=latest
+ENV VERSION=v12.14.1 NPM_VERSION=6 YARN_VERSION=latest
+# ENV VERSION=v13.6.0 NPM_VERSION=6 YARN_VERSION=latest
 
-RUN apk add --no-cache curl gnupg libstdc++
+RUN apk upgrade --no-cache -U && \
+  apk add --no-cache curl gnupg libstdc++
 
 RUN curl -sfSLO https://unofficial-builds.nodejs.org/download/release/${VERSION}/node-${VERSION}-linux-x64-musl.tar.xz && \
   curl -sfSLO https://unofficial-builds.nodejs.org/download/release/${VERSION}/SHASUMS256.txt && \
@@ -28,7 +29,7 @@ RUN for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-key
   rm ${YARN_VERSION}.tar.gz*
 
 RUN apk del curl gnupg && \
-  rm -rf /SHASUMS256.txt /tmp/* /var/cache/apk/* \
+  rm -rf /SHASUMS256.txt /tmp/* \
     /usr/share/man/* /usr/share/doc /root/.npm /root/.node-gyp /root/.config \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/docs \
     /usr/lib/node_modules/npm/html /usr/lib/node_modules/npm/scripts && \

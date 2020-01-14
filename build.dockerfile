@@ -1,17 +1,18 @@
 # FROM alpine:3.6
-FROM alpine:3.7
-# FROM alpine:3.9
+# FROM alpine:3.7
+FROM alpine:3.9
 # FROM alpine:3.10
 
 # ENV VERSION=v8.16.2 NPM_VERSION=6 YARN_VERSION=latest
-ENV VERSION=v10.18.1 NPM_VERSION=6 YARN_VERSION=latest
-# ENV VERSION=v12.14.1 NPM_VERSION=6 YARN_VERSION=latest
+# ENV VERSION=v10.18.1 NPM_VERSION=6 YARN_VERSION=latest
+ENV VERSION=v12.14.1 NPM_VERSION=6 YARN_VERSION=latest
 # ENV VERSION=v13.6.0 NPM_VERSION=6 YARN_VERSION=latest
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
-RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++
+RUN apk upgrade --no-cache -U && \
+  apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++
 
 RUN for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
     gpg --keyserver $server --recv-keys \
@@ -58,7 +59,7 @@ RUN if [ -z "$CONFIG_FLAGS" ]; then \
   fi
 
 RUN apk del curl make gcc g++ python linux-headers binutils-gold gnupg ${DEL_PKGS} && \
-  rm -rf ${RM_DIRS} /node-${VERSION}* /SHASUMS256.txt /tmp/* /var/cache/apk/* \
+  rm -rf ${RM_DIRS} /node-${VERSION}* /SHASUMS256.txt /tmp/* \
     /usr/share/man/* /usr/share/doc /root/.npm /root/.node-gyp /root/.config \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/docs \
     /usr/lib/node_modules/npm/html /usr/lib/node_modules/npm/scripts && \
