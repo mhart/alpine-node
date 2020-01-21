@@ -1,12 +1,12 @@
-FROM alpine:3.6
+# FROM alpine:3.6
 # FROM alpine:3.7
 # FROM alpine:3.9
-# FROM alpine:3.10
+FROM alpine:3.10
 
-ENV VERSION=v8.17.0 NPM_VERSION=6 YARN_VERSION=latest
+# ENV VERSION=v8.17.0 NPM_VERSION=6 YARN_VERSION=latest
 # ENV VERSION=v10.18.1 NPM_VERSION=6 YARN_VERSION=latest
 # ENV VERSION=v12.14.1 NPM_VERSION=6 YARN_VERSION=latest
-# ENV VERSION=v13.6.0 NPM_VERSION=6 YARN_VERSION=latest
+ENV VERSION=v13.7.0 NPM_VERSION=6 YARN_VERSION=latest
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
