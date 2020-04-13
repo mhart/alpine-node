@@ -1,8 +1,8 @@
-# FROM mhart/alpine-node:10
-# FROM alpine:3.7
+FROM mhart/alpine-node:10
+FROM alpine:3.7
 
-FROM mhart/alpine-node:12
-FROM alpine:3.9
+# FROM mhart/alpine-node:12
+# FROM alpine:3.9
 
 # FROM mhart/alpine-node:13
 # FROM alpine:3.10
