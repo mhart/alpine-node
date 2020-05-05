@@ -9,11 +9,11 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `14`, `14.1`, `14.1.0` – 108 MB (npm 6.14.4, yarn 1.22.4)
-  - `13`, `13.14`, `13.14.0` – 106 MB (npm 6.14.4, yarn 1.22.4)
-  - `12`, `12.16`, `12.16.3` – 79.9 MB (npm 6.14.4, yarn 1.22.4)
-  - `10`, `10.20`, `10.20.1` – 74.5 MB (npm 6.14.4, yarn 1.22.4)
-  - `8`, `8.17`, `8.17.0` – 68.2 MB (npm 6.14.4, yarn 1.22.4)
+  - `latest`, `14`, `14.1`, `14.1.0` – 108 MB (npm 6.14.5, yarn 1.22.4)
+  - `13`, `13.14`, `13.14.0` – 106 MB (npm 6.14.5, yarn 1.22.4)
+  - `12`, `12.16`, `12.16.3` – 79.9 MB (npm 6.14.5, yarn 1.22.4)
+  - `10`, `10.20`, `10.20.1` – 74.5 MB (npm 6.14.5, yarn 1.22.4)
+  - `8`, `8.17`, `8.17.0` – 68.2 MB (npm 6.14.5, yarn 1.22.4)
 - Full install build with npm:
   - `6`, `6.17`, `6.17.1` – 49 MB (npm 3.10.10)
   - `4`, `4.9`, `4.9.1` – 35.2 MB (npm 2.15.12)
@@ -38,7 +38,7 @@ $ docker run --rm mhart/alpine-node:10 node --version
 v10.20.1
 
 $ docker run --rm mhart/alpine-node:12 npm --version
-6.14.4
+6.14.5
 
 $ docker run --rm mhart/alpine-node:12 yarn --version
 1.22.4
