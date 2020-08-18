@@ -1,9 +1,8 @@
 #/bin/sh
 
 docker build --pull --squash \
-  -t mhart/alpine-node:14.8.0 \
-  -t mhart/alpine-node:14.8 \
-  -t mhart/alpine-node:14 \
-  -t mhart/alpine-node:latest \
+  -t mhart/alpine-node:8.17.0 \
+  -t mhart/alpine-node:8.17 \
+  -t mhart/alpine-node:8 \
   -f build.dockerfile \
   .
