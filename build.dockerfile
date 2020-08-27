@@ -5,7 +5,7 @@
 # ENV VERSION=v12.18.3 NPM_VERSION=6 YARN_VERSION=latest
 
 FROM alpine:3.11
-ENV VERSION=v14.8.0 NPM_VERSION=6 YARN_VERSION=latest
+ENV VERSION=v14.9.0 NPM_VERSION=6 YARN_VERSION=latest
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
