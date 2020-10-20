@@ -1,17 +1,20 @@
 # FROM alpine:3.7
-# ENV VERSION=v10.22.1 NPM_VERSION=6 YARN_VERSION=latest
+# ENV VERSION=v10.22.1 NPM_VERSION=6 YARN_VERSION=v1.22.10
 
 # FROM alpine:3.9
-# ENV VERSION=v12.19.0 NPM_VERSION=6 YARN_VERSION=latest
+# ENV VERSION=v12.19.0 NPM_VERSION=6 YARN_VERSION=v1.22.10
 
-FROM alpine:3.11
-ENV VERSION=v14.14.0 NPM_VERSION=6 YARN_VERSION=latest
+# FROM alpine:3.11
+# ENV VERSION=v14.14.0 NPM_VERSION=6 YARN_VERSION=v1.22.10
+
+FROM alpine:3.12
+ENV VERSION=v15.0.0 NPM_VERSION=7 YARN_VERSION=v1.22.10
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
 RUN apk upgrade --no-cache -U && \
-  apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++
+  apk add --no-cache curl make gcc g++ python3 linux-headers binutils-gold gnupg libstdc++
 
 RUN for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
     gpg --keyserver $server --recv-keys \
@@ -46,17 +49,17 @@ RUN if [ -z "$CONFIG_FLAGS" ]; then \
         gpg --keyserver $server --recv-keys \
           6A010C5166006599AA17F08146C2130DFD2497F5 && break; \
       done && \
-      curl -sfSL -O https://yarnpkg.com/${YARN_VERSION}.tar.gz -O https://yarnpkg.com/${YARN_VERSION}.tar.gz.asc && \
-      gpg --batch --verify ${YARN_VERSION}.tar.gz.asc ${YARN_VERSION}.tar.gz && \
+      curl -sfSL -O https://github.com/yarnpkg/yarn/releases/download/${YARN_VERSION}/yarn-${YARN_VERSION}.tar.gz -O https://github.com/yarnpkg/yarn/releases/download/${YARN_VERSION}/yarn-${YARN_VERSION}.tar.gz.asc && \
+      gpg --batch --verify yarn-${YARN_VERSION}.tar.gz.asc yarn-${YARN_VERSION}.tar.gz && \
       mkdir /usr/local/share/yarn && \
-      tar -xf ${YARN_VERSION}.tar.gz -C /usr/local/share/yarn --strip 1 && \
+      tar -xf yarn-${YARN_VERSION}.tar.gz -C /usr/local/share/yarn --strip 1 && \
       ln -s /usr/local/share/yarn/bin/yarn /usr/local/bin/ && \
       ln -s /usr/local/share/yarn/bin/yarnpkg /usr/local/bin/ && \
-      rm ${YARN_VERSION}.tar.gz*; \
+      rm yarn-${YARN_VERSION}.tar.gz*; \
     fi; \
   fi
 
-RUN apk del curl make gcc g++ python linux-headers binutils-gold gnupg ${DEL_PKGS} && \
+RUN apk del curl make gcc g++ python3 linux-headers binutils-gold gnupg ${DEL_PKGS} && \
   rm -rf ${RM_DIRS} /node-${VERSION}* /SHASUMS256.txt /tmp/* \
     /usr/share/man/* /usr/share/doc /root/.npm /root/.node-gyp /root/.config \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/docs \
