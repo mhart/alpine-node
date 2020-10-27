@@ -1,20 +1,20 @@
-# FROM alpine:3.7
-# ENV VERSION=v10.22.1 NPM_VERSION=6 YARN_VERSION=v1.22.10
+FROM alpine:3.7
+ENV VERSION=v10.23.0 NPM_VERSION=6 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python
 
 # FROM alpine:3.9
-# ENV VERSION=v12.19.0 NPM_VERSION=6 YARN_VERSION=v1.22.10
+# ENV VERSION=v12.19.0 NPM_VERSION=6 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
 
 # FROM alpine:3.11
-# ENV VERSION=v14.14.0 NPM_VERSION=6 YARN_VERSION=v1.22.10
+# ENV VERSION=v14.14.0 NPM_VERSION=6 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
 
-FROM alpine:3.12
-ENV VERSION=v15.0.1 NPM_VERSION=7 YARN_VERSION=v1.22.10
+# FROM alpine:3.12
+# ENV VERSION=v15.0.1 NPM_VERSION=7 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
 
 # For base builds
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libstdc++" RM_DIRS=/usr/include
 
 RUN apk upgrade --no-cache -U && \
-  apk add --no-cache curl make gcc g++ python3 linux-headers binutils-gold gnupg libstdc++
+  apk add --no-cache curl make gcc g++ ${NODE_BUILD_PYTHON} linux-headers binutils-gold gnupg libstdc++
 
 RUN for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
     gpg --keyserver $server --recv-keys \
@@ -59,7 +59,7 @@ RUN if [ -z "$CONFIG_FLAGS" ]; then \
     fi; \
   fi
 
-RUN apk del curl make gcc g++ python3 linux-headers binutils-gold gnupg ${DEL_PKGS} && \
+RUN apk del curl make gcc g++ ${NODE_BUILD_PYTHON} linux-headers binutils-gold gnupg ${DEL_PKGS} && \
   rm -rf ${RM_DIRS} /node-${VERSION}* /SHASUMS256.txt /tmp/* \
     /usr/share/man/* /usr/share/doc /root/.npm /root/.node-gyp /root/.config \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/docs \

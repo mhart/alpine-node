@@ -2,9 +2,9 @@
 # FROM alpine:3.6
 # ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
 
-# FROM mhart/alpine-node:10
-# FROM alpine:3.7
-# ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
+FROM mhart/alpine-node:10
+FROM alpine:3.7
+ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
 
 # FROM mhart/alpine-node:12
 # FROM alpine:3.9
@@ -14,9 +14,9 @@
 # FROM alpine:3.11
 # ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
 
-FROM mhart/alpine-node:15
-FROM alpine:3.12
-ENV NPM_VERSION=7.0.3 YARN_VERSION=v1.22.10
+# FROM mhart/alpine-node:15
+# FROM alpine:3.12
+# ENV NPM_VERSION=7.0.3 YARN_VERSION=v1.22.10
 
 COPY --from=0 /usr/bin/node /usr/bin/
 COPY --from=0 /usr/include/node /usr/include/node
