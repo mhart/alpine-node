@@ -1,7 +1,7 @@
 Minimal Node.js Docker Images
 -----------------------------
 
-Versions v15.0.1, v14.14.0, v12.19.0, v10.23.0, v8.17.0, v6.17.1, v4.9.1, v0.12.18 and v0.10.48 –
+Versions v15.0.1, v14.15.0, v12.19.0, v10.23.0, v8.17.0, v6.17.1, v4.9.1, v0.12.18 and v0.10.48 –
 built on [Alpine Linux](https://alpinelinux.org/).
 
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
@@ -10,7 +10,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 
 - Full install built with npm and yarn:
   - `latest`, `15`, `15.0`, `15.0.1` – 109 MB (npm 7.0.3, yarn 1.22.10)
-  - `14`, `14.14`, `14.14.0` – 110 MB (npm 6.14.8, yarn 1.22.10)
+  - `14`, `14.15`, `14.15.0` – 110 MB (npm 6.14.8, yarn 1.22.10)
   - `12`, `12.19`, `12.19.0` – 82.2 MB (npm 6.14.8, yarn 1.22.10)
   - `10`, `10.23`, `10.23.0` – 74.4 MB (npm 6.14.8, yarn 1.22.10)
   - `8`, `8.17`, `8.17.0` – 68.5 MB (npm 6.14.8, yarn 1.22.10)
@@ -21,7 +21,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `0.10`, `0.10.48` – 27.8 MB (npm 2.15.12)
 - Slim install with no npm or yarn:
   - `slim`, `slim-15`, `slim-15.0`, `slim-15.0.1` – 77.6 MB
-  - `slim-14`, `slim-14.14`, `slim-14.14.0` – 74.1 MB
+  - `slim-14`, `slim-14.15`, `slim-14.15.0` – 74.1 MB
   - `slim-12`, `slim-12.19`, `slim-12.19.0` – 47 MB
   - `slim-10`, `slim-10.23`, `slim-10.23.0` – 42 MB
   - `slim-8`, `slim-8.17`, `slim-8.17.0` – 37.2 MB
@@ -32,7 +32,7 @@ Examples
 
 ```console
 $ docker run --rm mhart/alpine-node:14 node --version
-v14.14.0
+v14.15.0
 
 $ docker run --rm mhart/alpine-node:12 node --version
 v12.19.0
@@ -47,7 +47,7 @@ $ docker run --rm mhart/alpine-node:12 yarn --version
 1.22.5
 
 $ docker run --rm mhart/alpine-node:slim-14 node --version
-v14.14.0
+v14.15.0
 
 $ docker run --rm mhart/alpine-node:slim-12 node --version
 v12.19.0

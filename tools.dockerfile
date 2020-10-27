@@ -2,17 +2,17 @@
 # FROM alpine:3.6
 # ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
 
-FROM mhart/alpine-node:10
-FROM alpine:3.7
-ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
+# FROM mhart/alpine-node:10
+# FROM alpine:3.7
+# ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
 
 # FROM mhart/alpine-node:12
 # FROM alpine:3.9
 # ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
 
-# FROM mhart/alpine-node:14
-# FROM alpine:3.11
-# ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
+FROM mhart/alpine-node:14
+FROM alpine:3.11
+ENV NPM_VERSION=6.14.8 YARN_VERSION=v1.22.10
 
 # FROM mhart/alpine-node:15
 # FROM alpine:3.12
