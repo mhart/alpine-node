@@ -20,7 +20,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `0.12`, `0.12.18` – 32.4 MB (npm 2.15.12)
   - `0.10`, `0.10.48` – 27.8 MB (npm 2.15.12)
 - Slim install with no npm or yarn:
-  - `slim`, `slim-15`, `slim-15.1`, `slim-15.1.0` – 77.6 MB
+  - `slim`, `slim-15`, `slim-15.1`, `slim-15.1.0` – 75.9 MB
   - `slim-14`, `slim-14.15`, `slim-14.15.0` – 74.1 MB
   - `slim-12`, `slim-12.19`, `slim-12.19.0` – 47 MB
   - `slim-10`, `slim-10.23`, `slim-10.23.0` – 42 MB
