@@ -1,6 +1,6 @@
 #/bin/sh
 
-for tag in 12.19.1 12.19 12 slim-12.19.1 slim-12.19 slim-12; do
+for tag in 14.15.1 14.15 14 slim-14.15.1 slim-14.15 slim-14; do
   git tag -f $tag
   git push -f origin $tag
   docker push mhart/alpine-node:$tag
