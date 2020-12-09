@@ -1,8 +1,8 @@
 #/bin/sh
 
 docker build --pull --squash \
-  -t mhart/alpine-node:12.20.0 \
-  -t mhart/alpine-node:12.20 \
-  -t mhart/alpine-node:12 \
+  -t mhart/alpine-node:14.15.1 \
+  -t mhart/alpine-node:14.15 \
+  -t mhart/alpine-node:14 \
   -f extract.dockerfile \
   .
