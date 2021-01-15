@@ -1,7 +1,8 @@
 #/bin/sh
 
 docker build --pull --squash \
-  -t mhart/alpine-node:10.23.1 \
-  -t mhart/alpine-node:10.23 \
-  -t mhart/alpine-node:10 \
+  -t mhart/alpine-node:15.6.0 \
+  -t mhart/alpine-node:15.6 \
+  -t mhart/alpine-node:15 \
+  -t mhart/alpine-node:latest \
   -f tools.dockerfile .
