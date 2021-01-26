@@ -10,10 +10,10 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 
 - Full install built with npm and yarn:
   - `latest`, `15`, `15.7`, `15.7.0` – 108 MB (npm 7.4.3, yarn 1.22.10)
-  - `14`, `14.15`, `14.15.4` – 108 MB (npm 6.14.10, yarn 1.22.10)
-  - `12`, `12.20`, `12.20.1` – 81.3 MB (npm 6.14.10, yarn 1.22.10)
+  - `14`, `14.15`, `14.15.4` – 109 MB (npm 6.14.11, yarn 1.22.10)
+  - `12`, `12.20`, `12.20.1` – 82.3 MB (npm 6.14.11, yarn 1.22.10)
   - `10`, `10.23`, `10.23.2` – 73.7 MB (npm 6.14.11, yarn 1.22.10)
-  - `8`, `8.17`, `8.17.0` – 67.8 MB (npm 6.14.10, yarn 1.22.10)
+  - `8`, `8.17`, `8.17.0` – 67.8 MB (npm 6.14.11, yarn 1.22.10)
 - Full install build with npm:
   - `6`, `6.17`, `6.17.1` – 49 MB (npm 3.10.10)
   - `4`, `4.9`, `4.9.1` – 35.2 MB (npm 2.15.12)
@@ -38,7 +38,7 @@ $ docker run --rm mhart/alpine-node:12 node --version
 v12.20.1
 
 $ docker run --rm mhart/alpine-node:14 npm --version
-6.14.10
+6.14.11
 
 $ docker run --rm mhart/alpine-node:14 yarn --version
 1.22.10
