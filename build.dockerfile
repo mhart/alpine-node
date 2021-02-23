@@ -8,7 +8,7 @@
 # ENV VERSION=v14.15.5 NPM_VERSION=6 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
 
 FROM alpine:3.12
-ENV VERSION=v15.9.0 NPM_VERSION=7 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
+ENV VERSION=v15.10.0 NPM_VERSION=7 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
 
 RUN apk upgrade --no-cache -U && \
   apk add --no-cache curl make gcc g++ ${NODE_BUILD_PYTHON} linux-headers binutils-gold gnupg libstdc++
