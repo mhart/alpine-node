@@ -9,9 +9,9 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 *unpacked* images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `15`, `15.10`, `15.10.0` – 110 MB (npm 7.5.4, yarn 1.22.10)
-  - `14`, `14.15`, `14.15.5` – 108 MB (npm 6.14.11, yarn 1.22.10)
-  - `12`, `12.20`, `12.20.2` – 81.3 MB (npm 6.14.11, yarn 1.22.10)
+  - `latest`, `15`, `15.10`, `15.10.0` – 115 MB (npm 7.5.6, yarn 1.22.10)
+  - `14`, `14.16`, `14.16.0` – 111 MB (npm 6.14.11, yarn 1.22.10)
+  - `12`, `12.21`, `12.21.0` – 81.3 MB (npm 6.14.11, yarn 1.22.10)
   - `10`, `10.24`, `10.24.0` – 73.7 MB (npm 6.14.11, yarn 1.22.10)
   - `8`, `8.17`, `8.17.0` – 67.8 MB (npm 6.14.11, yarn 1.22.10)
 - Full install build with npm:
@@ -20,9 +20,9 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `0.12`, `0.12.18` – 32.4 MB (npm 2.15.12)
   - `0.10`, `0.10.48` – 27.8 MB (npm 2.15.12)
 - Slim install with no npm or yarn:
-  - `slim`, `slim-15`, `slim-15.10`, `slim-15.10.0` – 78.9 MB
-  - `slim-14`, `slim-14.15`, `slim-14.15.5` – 74 MB
-  - `slim-12`, `slim-12.20`, `slim-12.20.2` – 47.9 MB
+  - `slim`, `slim-15`, `slim-15.10`, `slim-15.10.0` – 79.7 MB
+  - `slim-14`, `slim-14.16`, `slim-14.16.0` – 76.4 MB
+  - `slim-12`, `slim-12.21`, `slim-12.21.0` – 47.9 MB
   - `slim-10`, `slim-10.24`, `slim-10.24.0` – 42 MB
   - `slim-8`, `slim-8.17`, `slim-8.17.0` – 37.2 MB
   - `slim-6`, `slim-6.17`, `slim-6.17.1` – 32.5 MB
@@ -32,10 +32,10 @@ Examples
 
 ```console
 $ docker run --rm mhart/alpine-node:14 node --version
-v14.15.5
+v14.16.0
 
 $ docker run --rm mhart/alpine-node:12 node --version
-v12.20.2
+v12.21.0
 
 $ docker run --rm mhart/alpine-node:14 npm --version
 6.14.11
@@ -44,10 +44,10 @@ $ docker run --rm mhart/alpine-node:14 yarn --version
 1.22.10
 
 $ docker run --rm mhart/alpine-node:slim-14 node --version
-v14.15.5
+v14.16.0
 
 $ docker run --rm mhart/alpine-node:slim-12 node --version
-v12.20.2
+v12.21.0
 ```
 
 Example Dockerfile for your own Node.js project
