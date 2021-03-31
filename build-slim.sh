@@ -1,7 +1,8 @@
 #/bin/sh
 
 docker build --squash \
-  -t mhart/alpine-node:slim-12.22.0 \
-  -t mhart/alpine-node:slim-12.22 \
-  -t mhart/alpine-node:slim-12 \
+  -t mhart/alpine-node:slim-15.13.0 \
+  -t mhart/alpine-node:slim-15.13 \
+  -t mhart/alpine-node:slim-15 \
+  -t mhart/alpine-node:slim \
   -f slim.dockerfile .
