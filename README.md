@@ -10,7 +10,7 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
 
 - Full install built with npm and yarn:
   - `latest`, `16`, `16.4`, `16.4.2` – 108 MB (npm 7.13.0, yarn 1.22.10)
-  - `14`, `14.16`, `14.16.1` – 108 MB (npm 6.14.12, yarn 1.22.10)
+  - `14`, `14.17`, `14.17.3` – 109 MB (npm 6.14.12, yarn 1.22.10)
   - `12`, `12.22`, `12.22.1` – 80.4 MB (npm 6.14.12, yarn 1.22.10)
   - `10`, `10.24`, `10.24.1` – 73.1 MB (npm 6.14.12, yarn 1.22.10)
   - `8`, `8.17`, `8.17.0` – 67.8 MB (npm 6.14.11, yarn 1.22.10)
@@ -20,8 +20,8 @@ but each version aligns with the following tags (ie, `mhart/alpine-node:<tag>`).
   - `0.12`, `0.12.18` – 32.4 MB (npm 2.15.12)
   - `0.10`, `0.10.48` – 27.8 MB (npm 2.15.12)
 - Slim install with no npm or yarn:
-  - `slim`, `slim-16`, `slim-16.4`, `slim-16.4.2` – 77.9 MB
-  - `slim-14`, `slim-14.16`, `slim-14.16.1` – 74 MB
+  - `slim`, `slim-16`, `slim-16.4`, `slim-16.4.2` – 78.1 MB
+  - `slim-14`, `slim-14.17`, `slim-14.17.3` – 73.9 MB
   - `slim-12`, `slim-12.22`, `slim-12.22.1` – 46.9 MB
   - `slim-10`, `slim-10.24`, `slim-10.24.1` – 41.3 MB
   - `slim-8`, `slim-8.17`, `slim-8.17.0` – 37.2 MB
@@ -32,7 +32,7 @@ Examples
 
 ```console
 $ docker run --rm mhart/alpine-node:14 node --version
-v14.16.1
+v14.17.3
 
 $ docker run --rm mhart/alpine-node:12 node --version
 v12.22.1
@@ -44,7 +44,7 @@ $ docker run --rm mhart/alpine-node:14 yarn --version
 1.22.10
 
 $ docker run --rm mhart/alpine-node:slim-14 node --version
-v14.16.1
+v14.17.3
 
 $ docker run --rm mhart/alpine-node:slim-12 node --version
 v12.22.1
