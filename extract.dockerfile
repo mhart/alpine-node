@@ -8,7 +8,7 @@
 # ENV VERSION=v15.14.0 NPM_VERSION=7 YARN_VERSION=v1.22.10
 
 FROM alpine:3.13
-ENV VERSION=v16.2.0 NPM_VERSION=7 YARN_VERSION=v1.22.10
+ENV VERSION=v16.4.2 NPM_VERSION=7 YARN_VERSION=v1.22.10
 
 RUN apk upgrade --no-cache -U && \
   apk add --no-cache curl gnupg libstdc++
@@ -22,7 +22,7 @@ RUN curl -sfSLO https://unofficial-builds.nodejs.org/download/release/${VERSION}
 RUN npm install -g npm@${NPM_VERSION} && \
   find /usr/lib/node_modules/npm -type d \( -name test -o -name .bin \) | xargs rm -rf
 
-RUN for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
+RUN for server in hkps://keys.openpgp.org ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
     gpg --keyserver $server --recv-keys \
       6A010C5166006599AA17F08146C2130DFD2497F5 && break; \
   done && \

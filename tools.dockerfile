@@ -31,7 +31,7 @@ RUN apk upgrade --no-cache -U && \
   apk add --no-cache curl gnupg libstdc++
 RUN /tmp/node_modules/npm/bin/npm-cli.js install -g npm@${NPM_VERSION} && \
   find /usr/lib/node_modules/npm -type d \( -name test -o -name .bin \) | xargs rm -rf
-RUN for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
+RUN for server in hkps://keys.openpgp.org ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
     gpg --keyserver $server --recv-keys \
       6A010C5166006599AA17F08146C2130DFD2497F5 && break; \
   done

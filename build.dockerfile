@@ -11,12 +11,12 @@
 # ENV VERSION=v15.14.0 NPM_VERSION=7 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
 
 FROM alpine:3.13
-ENV VERSION=v16.2.0 NPM_VERSION=7 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
+ENV VERSION=v16.4.2 NPM_VERSION=7 YARN_VERSION=v1.22.10 NODE_BUILD_PYTHON=python3
 
 RUN apk upgrade --no-cache -U && \
   apk add --no-cache curl make gcc g++ ${NODE_BUILD_PYTHON} linux-headers binutils-gold gnupg libstdc++
 
-RUN for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
+RUN for server in hkps://keys.openpgp.org ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
     gpg --keyserver $server --recv-keys \
       4ED778F539E3634C779C87C6D7062848A1AB005C \
       94AE36675C464D64BAFA68DD7434390BDBE9B9C5 \
@@ -46,7 +46,7 @@ RUN if [ -z "$CONFIG_FLAGS" ]; then \
     fi; \
     find /usr/lib/node_modules/npm -type d \( -name test -o -name .bin \) | xargs rm -rf; \
     if [ -n "$YARN_VERSION" ]; then \
-      for server in ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
+      for server in hkps://keys.openpgp.org ipv4.pool.sks-keyservers.net keyserver.pgp.com ha.pool.sks-keyservers.net; do \
         gpg --keyserver $server --recv-keys \
           6A010C5166006599AA17F08146C2130DFD2497F5 && break; \
       done && \
