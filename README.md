@@ -1,7 +1,7 @@
 Minimal Node.js Docker Images
 -----------------------------
 
-Versions v16.4.2, v14.15.5, v12.20.2, v10.24.1, v8.17.0, v6.17.1, v4.9.1, v0.12.18 and v0.10.48 –
+Versions v16.4.2, v14.17.3, v12.22.3, v10.24.1, v8.17.0, v6.17.1, v4.9.1, v0.12.18 and v0.10.48 –
 built on [Alpine Linux](https://alpinelinux.org/).
 
 All versions use the one [mhart/alpine-node](https://hub.docker.com/r/mhart/alpine-node/) repository,
