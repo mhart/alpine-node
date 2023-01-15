@@ -1,3 +1,9 @@
+# Deprecated
+
+This project is now in archive mode. Please use the official Node.js Alpine images at:
+
+https://github.com/nodejs/docker-node#nodealpine
+
 Minimal Node.js Docker Images
 -----------------------------
 
